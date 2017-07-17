@@ -13,7 +13,7 @@ var express         = require("express"),       // used to run the whole applica
     Crop            = require("./models/crop");
     
 mongoose.Promise = global.Promise;  // prevent a warning message
-mongoose.connect("mongodb://localhost/autumn_petal");// WEBSITE HERE
+// mongoose.connect("mongodb://localhost/autumn_petal");// WEBSITE HERE
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
