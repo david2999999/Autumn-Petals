@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
       margin: 0;
-      background-image: url(http://cdn.wallpapersafari.com/14/30/aIzfij.jpg);
+      background-image: url(../image/bgimage.jpg);
       background-attachment: fixed;
       width: 100%;
       height: 100%;
