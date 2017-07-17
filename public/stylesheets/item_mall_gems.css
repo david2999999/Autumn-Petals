@@ -1,0 +1,276 @@
+img{
+      max-width: 100%;
+      max-height: 100%;
+}
+div.content3{
+      display: block;
+      /*background: #fcd29c;*/
+      background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,104,10,0.89) 100%);
+      opacity: .9;
+      border-style: 2px solid none;
+      border-radius: 15px;
+      min-width: 1000px;
+      width: 1245px;
+      margin-top: 99px;
+      /*margin-left: 250px;
+      margin-right: 250px;
+      position: absolute;*/
+      margin: 0 auto;
+      height: 1270px;
+      white-space: nowrap;
+      box-shadow: 10px 10px 25px 3px rgba(135,33,10,1);
+}
+div.item_tab{
+      display: block;
+      opacity: inherit;
+      border-color: #f71616;
+      min-width: 160px;
+      margin: 10px 10px 0px 10px;
+      text-align: center;
+}
+div.side_tab3{
+      display: block;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 6px 6px 6px 6px;
+      min-width: 200px;
+      width: 200px;
+      height: 600px;
+      margin: 20px 10px 20px 30px;
+      text-align: center;
+      float: left;
+}
+
+.item_tab_elements{
+      display: block;
+      background: white;
+      opacity: inherit;
+      border-radius: 5px;
+      min-width: 160px;
+      margin: 0px 10px 0px 10px;
+      font-size: 16px;
+      line-height: 24px;
+      border: transparent solid 2px;
+      transition : border-color 0.5s;
+}
+.item_tab_elements:hover{
+      border-color: orange;
+}
+.item_tab_elements ul li{
+      text-align: left;
+      list-style-type: none;
+}
+.item_tab_elements ul li a{
+      text-decoration: none;
+      color: brown;
+}
+.content3 .side_tab3 .item_tab_elements ul li a:hover{
+      color: red;
+      background: white;
+}
+.item_content{
+      display: block;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 10px;
+      min-width: 600px;
+      height: 1200px;
+      margin: 20px 10px 20px 70px;
+      text-align: center;
+      float: left;
+}
+
+
+.header_item{
+      float: left;
+      margin: 20px 0px 20px 20px;
+      background: white;
+      border-radius: 4px;
+      padding: 10px 40px 10px 40px;
+}
+
+.item_content_container{
+      display: block;
+      background: white;
+      opacity: inherit;
+      border-radius: 10px;
+      min-width: 800px;
+      width: 700px;
+      height: 1050px;
+      margin: 0px 20px 20px 20px;
+      float: left;
+      border: transparent solid 2px;
+      transition : border-color 0.5s;
+}
+
+.item_content_container:hover{
+      border-color: #ef4102;
+}
+
+.item_content_list{
+      display: block;
+      background: white;
+      border-radius: 5px;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+      width: 160px;
+      height: 180px;
+      margin: 20px 0px 0px 30px;
+      float: left;
+      transition: box-shadow 1s ease;
+}
+.item_content_list:hover{
+      border-color:#fcb3b3;
+      box-shadow: 3px 9px 113px 0px rgba(255,105,255,1);
+}
+.item_img{
+      display: block;
+      background: white;
+      border-radius: 5px;
+      border-bottom: brown solid 1px;
+      width: 159px;
+      height: 80px;
+}
+.item_content_list:hover .item_img{
+      border-color:#fcb3b3;
+}
+.item_name{
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      color: brown;
+}
+.item_price{
+      display: block;
+      background: white;
+      width: 30px;
+      height: 30px;
+      margin: 7px 10px 5px 50px;
+      font-size: 17px;
+}
+
+.item_price b{
+      display: block;
+      float: left;
+      padding-top: 5px;
+      padding-right: 10px;
+}
+
+.buy_button{
+      background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(231,56,39,1) 100%);
+      padding-top: 5px;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      border: brown solid 1px;
+      height: 23px;
+}
+.buy_button:hover{
+      background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(246,41,12,1) 18%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+}
+.buy_button a{
+      text-decoration: none;
+      color: white;
+}
+#footer{
+      display: block;
+      height: 96px;
+      /*margin-left: 320px;
+      margin-right: 150px;*/
+      margin: 0 auto;
+      margin-top: 30px;
+      min-width: 1100px;
+      max-width: 1200px;
+      height: 50px;
+      border-radius: 10px;
+      /*position: absolute;*/
+      white-space: nowrap;
+      background: linear-gradient(45deg, rgba(241,111,92,1) 0%, rgba(255,30,0,1) 0%, rgba(248,80,50,0.99) 8%, rgba(237,40,19,0.9) 70%, rgba(231,56,39,0.86) 100%);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(250,158,158,1);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(250,158,158,1);
+      box-shadow: 5px 5px 3px 0px rgba(158,40,40,1);
+}
+div #footer-menu{
+      margin-top: 13px;
+      margin-left: 10px;
+      padding: 5px;
+      float: left;
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 55%, rgba(255,146,10,1) 100%);
+      border-radius: 5px;
+      box-shadow:  0 3px 5px #ff5400 inset, 0 0 0 1px #ea4646;
+}
+
+#footer a{
+      text-decoration: none;
+      color: black;
+}
+#footer .logo{
+      border-width: 1px;
+      padding: 5px 20px 5px 20px;
+      text-align: center;
+      float: left;
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      color: white;
+}
+
+.footer-m{
+      padding-left: 5px;
+      border-left: solid;
+      border-color: brown;
+}
+
+div #footer-social{
+      width: 150px;
+      height: 40px;
+      margin-left: 30px;
+      float: left;
+
+}
+#footer-social ul{
+      display: flex;
+      text-align: center;
+}
+#footer-social ul li{
+      background: #000;
+      margin: 1px;
+      list-style: none;
+      font-size: 24px;
+      transition: .5s;
+}
+#footer-social ul li a{
+      width: 30px;
+      display: block;
+      color: #fff;
+}
+
+#footer-social ul li:nth-child(1){
+      background: #3b5998;
+}
+#footer-social ul li:nth-child(2){
+      background: #55acee;
+}
+#footer-social ul li:nth-child(3){
+      background: #dd4b39;
+}
+#footer-social ul li:nth-child(4){
+      background: #bb0000;
+}
+#footer-social ul li:nth-child(5){
+      background: #007bb5;
+}
+
+.copyright{
+      /*margin-left: 800px;*/
+      text-align: center;
+      color: black;
+      margin-top: 15px;
+      display: block;
+}

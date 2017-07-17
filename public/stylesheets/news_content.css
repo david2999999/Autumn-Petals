@@ -1,0 +1,183 @@
+div.content2{
+      display: flex;
+      /*background: #fcd29c;*/
+      background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,104,10,0.89) 100%);
+      opacity: .9;
+      border-style: 2px solid none;
+      border-radius: 15px;
+      max-width: 1150px;
+      width: 90%;
+    min-width: 800px;
+      margin-top: 20px;
+    margin-bottom: 60px;
+      height: auto;
+      /*margin-left: 250px;
+      margin-right: 250px;
+      position: absolute;*/
+      margin-left: auto;
+    margin-right: auto;
+      white-space: nowrap;
+      box-shadow: 10px 10px 25px 3px rgba(135,33,10,1);
+}
+div.news_tab{
+      display: block;
+      opacity: inherit;
+      border-color: #f71616;
+      margin: 10px 10px 0px 10px;
+      text-align: center;
+}
+div.side_tab{
+      display: block;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 6px 6px 6px 6px;
+      min-width: 150px;
+      width: 15%;
+      height: 600px;
+      margin: 20px 10px 20px 20px;
+      text-align: center;
+      float: left;
+}
+
+.news_tab_elements{
+      display: block;
+      background: white;
+      opacity: inherit;
+      border-radius: 5px;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+      margin: 0px 10px 0px 10px;
+      font-size: 16px;
+      line-height: 24px;
+}
+
+.news_tab_elements ul{
+    padding-left: 10px;
+}
+
+.news_tab_elements ul li{
+      text-align: left;
+      list-style-type: none;
+    padding-left: 0px;
+}
+.news_tab_elements ul li a{
+      text-decoration: none;
+    color: brown;
+}
+
+.content2 .side_tab .news_tab_elements ul li a:hover{
+      color: red;
+      background: white;
+}
+.news_content{
+      display: block;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 10px;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+      margin: 20px;
+      text-align: center;
+}
+
+.header_news{
+      float: left;
+      border-width: 1px;
+      margin: 20px 0px 20px 20px;
+      border-color: brown;
+      background: white;
+      border-style: solid;
+      border-radius: 4px;
+      padding: 10px 40px 10px 40px;
+}
+
+.news_content_list{
+      display: block;
+      background: white;
+      opacity: inherit;
+      border-radius: 10px;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+    width: 90%;
+      margin-left: 20px;
+    margin-right: 0px;
+    padding-bottom: 40px;
+      float: left;
+}
+
+
+.article1{
+      border-top: 1px solid;
+      border-color: #ff2e00;
+      padding: 10px 0px 5px 10px;
+      float: left;
+      margin-left: 30px;
+      width: 90%;
+      height: 25px;
+      display: inline;
+}
+
+.subject1{
+    margin: 0;
+    width: 509px;
+    padding: 0;
+    border: none;
+    float: left;
+    text-shadow: 0 1px 0 #fcd5ff;
+    text-align: left;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: 'Arvo', serif;
+}
+.subject1 a{
+    text-decoration: none;
+    /*color: #db4a23;*/
+    color: #ff2e00;
+}
+.date1{
+    display: inline;
+    padding: 0 7px;
+    float: right;
+    margin-right: 40px;
+    top: 1px;
+    position: relative;
+    background: #ecfff8;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #ff5400;
+    box-shadow:  0 1px 3px #ff5400 inset, 0 0 0 1px #fff;
+}
+
+.teaser1{
+    font-weight: bold;
+    width: auto;
+    padding-left: 0px;
+    padding: 10px;
+    display: inline;
+    text-align: left;
+    float: left;
+    color : #f74109;
+    font-size : 14px;
+
+}
+.more{
+    display: inline;
+    position: relative;
+}
+.teaser1 a {
+    text-decoration: none;
+    color : #a51e00;
+    font-size: 13px;
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+}
+.more:hover{
+    color: red;
+}

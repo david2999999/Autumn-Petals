@@ -1,0 +1,28 @@
+.downloadButton{
+     background: linear-gradient(to right, rgba(245,208,59,1) 0%, rgba(240,213,170,1) 50%, rgba(245,208,59,1) 100%);
+      width: auto;
+      border-style: solid;
+      border-width: 3px;
+      border-radius: 5px;
+      padding: 20px 30px;
+      box-shadow:3px 3px 6px 0 #6D6D6D;
+      border-color: orange;
+      /*margin: 0px;*/
+      float: left;
+      position: relative;
+      z-index: 100;
+      transition: box-shadow 1s ease;
+}
+.downloadButton:hover{
+      background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(255,216,158,1) 50%, rgba(241,231,103,1) 100%);
+      box-shadow: 0px 3px 51px 14px rgba(255,89,0,1);
+}
+
+.image{
+   position:relative;
+   top: 10px;
+   right: 10px;
+
+   width:50px;
+   height:50px;
+}

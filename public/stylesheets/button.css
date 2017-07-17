@@ -1,0 +1,50 @@
+.button1{
+      /*background: linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,0.89) 98%, rgba(254,182,69,0.89) 100%);*/
+      /*background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 14%, rgba(246,41,12,1) 46%, rgba(240,47,23,1) 63%, rgba(231,56,39,1) 100%);*/
+      background: linear-gradient(to right, rgba(240,47,23,1) 0%, rgba(231,56,39,1) 100%);
+      width: auto;
+      border-style: solid;
+      /*color: purple;*/
+      color: white;
+      border-width: 1px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      border-color: #ff6a00;
+      text-decoration: none;
+      margin: 5px;
+      /*font-family: 'Old Standard TT', serif;*/
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      float: right;
+      margin-right: 20px;
+      position: relative;
+}
+.button1:hover{
+      background: linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(241,231,103,0.99) 7%, rgba(254,182,69,0.96) 34%, rgba(254,182,69,0.89) 100%);
+      color: black;
+}
+.button2{
+      /*background: linear-gradient(45deg, rgba(243,226,199,1) 0%, rgba(193,158,103,0.88) 85%, rgba(182,141,76,0.86) 99%, rgba(233,212,179,0.86) 100%);*/
+      background: linear-gradient(to right, rgba(240,47,23,1) 0%, rgba(231,56,39,1) 100%);
+      width: auto;
+      border-style: solid;
+      /*color: purple;*/
+      color: white;
+      border-width: 1px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      border-color: #ff6a00;
+      text-decoration: none;
+      margin: 5px;
+      /*font-family: 'Old Standard TT', serif;*/
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      float: right;
+      position: relative;
+}
+.button2:hover{
+      background: linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(241,231,103,0.99) 7%, rgba(254,182,69,0.96) 34%, rgba(254,182,69,0.89) 100%);
+      color: black;
+}

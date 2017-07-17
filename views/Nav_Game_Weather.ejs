@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Autumn Petals</title>
+            <link rel="stylesheet" href="../stylesheets/main_page.css" style="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Satisfy" rel="stylesheet">
+            <link rel="stylesheet" href="../stylesheets/button.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/downloadbutton.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/image_slider.css" style="text/css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../stylesheets/game_weather.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/footer.css" style="text/css">
+      </head>
+      <body>
+          <div class="mainContent">
+                  <div class="header">
+                  <% include ./partials/header1 %>
+                  <% include ./partials/banner %>
+                  <% include ./partials/header2 %>
+                  </div>
+                    <div class="content3">
+                        <% include ./partials/side_tab_game %>
+                        <div class="item_content">
+                              <h2 class="header_item">Weather</h2><br>
+                              <div class="item_content_container">
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/weather1.jpg" alt="Clear Sky">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Day Time: Clear Sky</font></b>
+                                          </div>
+                                    </div>
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/Night.gif" alt="Night">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Night Time: Clear Sky</font></b>
+                                          </div>
+                                    </div>
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/weather3.jpg" alt="Lotus Flower">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Rainy Day: Animals and pets should be kept inside.</font></b>
+                                          </div>
+                                    </div>
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/weather4.jpg" alt="Cloudy Sky">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Day Time: Cloudy Sky. A slight chance of rain or snow depending on the season.</font></b>
+                                          </div>
+                                    </div>
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/weather5.jpg" alt="Snowy Day">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Snowy Day. Animals and pets should be kept inside.</font></b>
+                                          </div>
+                                    </div>
+
+                                    <div class="item_content_list">
+                                          <div class="item_img">
+                                                <img src="../Elements/weather6.jpg" alt="Stormy Day">
+                                          </div>
+                                          <div class="description">
+                                                <b><font color="brown">Stormy Day. All of the crop in the field is destroyed.Animals and pets that are left outside will be sick.</font></b>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+              </div><br><br>
+            <% include ./partials/footer %>
+      </body>
+</html>

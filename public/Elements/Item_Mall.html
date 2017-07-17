@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Autumn Petals</title>
+            <style type="text/css">
+            img{
+                  max-width: 100%;
+                  max-height: 100%;
+            }
+            div.content3{
+                  display: block;
+                  /*background: #fcd29c;*/
+                  background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,104,10,0.89) 100%);
+                  opacity: .9;
+                  border-style: 2px solid none;
+                  border-radius: 15px;
+                  min-width: 1000px;
+                  width: 1245px;
+                  margin-top: 99px;
+                  margin-left: 250px;
+                  margin-right: 250px;
+                  position: absolute;
+                  white-space: nowrap;
+                  box-shadow: 10px 10px 25px 3px rgba(135,33,10,1);
+            }
+      div.item_tab{
+            display: block;
+            opacity: inherit;
+            border-color: #f71616;
+            min-width: 160px;
+            margin: 10px 10px 0px 10px;
+            text-align: center;
+      }
+      div.side_tab3{
+            display: block;
+            /*background: #ffddc6;*/
+            background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+            opacity: inherit;
+            box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+            border-radius: 6px 6px 6px 6px;
+            min-width: 200px;
+            width: 200px;
+            height: 600px;
+            margin: 20px 10px 20px 30px;
+            text-align: center;
+            float: left;
+      }
+
+      .item_tab_elements{
+            display: block;
+            background: white;
+            opacity: inherit;
+            border-radius: 5px;
+            min-width: 160px;
+            margin: 0px 10px 0px 10px;
+            font-size: 16px;
+            line-height: 24px;
+            border: transparent solid 2px;
+            transition : border-color 0.5s;
+      }
+      .item_tab_elements:hover{
+            border-color: orange;
+      }
+      .item_tab_elements ul li{
+            text-align: left;
+            list-style-type: none;
+      }
+      .item_tab_elements ul li a{
+            text-decoration: none;
+            color: brown;
+      }
+      .item_content{
+            display: block;
+            /*background: #ffddc6;*/
+            background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+            opacity: inherit;
+            box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+            border-radius: 10px;
+            min-width: 600px;
+            height: 1200px;
+            margin: 20px 10px 20px 70px;
+            text-align: center;
+            float: left;
+      }
+
+      .header_item{
+            float: left;
+            margin: 20px 0px 20px 20px;
+            background: white;
+            border-radius: 4px;
+            padding: 10px 40px 10px 40px;
+      }
+
+      .item_content_container{
+            display: block;
+            background: white;
+            opacity: inherit;
+            border-radius: 10px;
+            min-width: 800px;
+            width: 700px;
+            height: 1050px;
+            margin: 0px 20px 20px 20px;
+            float: left;
+            border: transparent solid 2px;
+            transition : border-color 0.5s;
+      }
+
+      .item_content_container:hover{
+            border-color: #ef4102;
+      }
+
+      .item_content_list{
+            display: block;
+            background: white;
+            border-radius: 5px;
+            border-color: brown;
+            border-style: solid;
+            border-width: 1px;
+            width: 160px;
+            height: 180px;
+            margin: 20px 0px 0px 30px;
+            float: left;
+            transition: box-shadow 1s ease;
+      }
+      .item_content_list:hover{
+            border-color:#fcb3b3;
+            box-shadow: 3px 9px 113px 0px rgba(255,208,0,1);
+      }
+      .item_img{
+            display: block;
+            background: white;
+            border-radius: 5px;
+            border-bottom: brown solid 1px;
+            width: 159px;
+            height: 80px;
+      }
+      .item_content_list:hover .item_img{
+            border-color:#fcb3b3;
+      }
+      .item_name{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            color: brown;
+      }
+      .item_price{
+            display: block;
+            background: white;
+            width: 30px;
+            height: 30px;
+            margin: 7px 10px 5px 50px;
+            font-size: 17px;
+      }
+
+      .item_price b{
+            display: block;
+            float: left;
+            padding-top: 5px;
+            padding-right: 10px;
+      }
+
+      .buy_button{
+            background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(231,56,39,1) 100%);
+            padding-top: 5px;
+            display: block;
+            text-align: center;
+            border-radius: 5px;
+            border: brown solid 1px;
+            height: 23px;
+      }
+      .buy_button:hover{
+            background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(246,41,12,1) 18%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+      }
+      .buy_button a{
+            text-decoration: none;
+            color: white;
+      }
+            </style>
+      </head>
+      <body>
+            <div class="content3">
+                  <div class="side_tab3">
+                        <div class="item_tab">
+                              <h3><strong>Item Mall</strong></h3>
+                        </div>
+                        <div class="item_tab_elements">
+                              <ul>
+                                    <li><a href="#"><strong><font color="red">Seeds</font></strong></a></li>
+                                    <li><a href="#">Legendary Trees</a></li>
+                                    <li><a href="#">Animals &amp; Pets</a></li>
+                                    <li><a href="#">Upgrades</a></li>
+                                    <li><a href="#">Expansion</a></li>
+                                    <li><a href="#">Gems</a></li>
+                                    <li><a href="#">Exp. Boost</a></li>
+                              </ul>
+                        </div>
+                  </div>
+                  <div class="item_content">
+                        <h2 class="header_item">Seeds</h2><br>
+                        <div class="item_content_container">
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="1.PNG" alt="Pumpkin">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Pumpkin Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="2.PNG" alt="Strawberry">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Strawberry Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>700</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="3.PNG" alt="Watermelon">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Watermelon Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>1000</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="4.PNG" alt="Y Watermelon">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Y Watermelon Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>800</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="5.PNG" alt="Beets">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Beets Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>700</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="7.PNG" alt="Tomatillo">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Tomatillo Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="8.PNG" alt="Raspberry">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Raspberry Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>900</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="9.PNG" alt="Onion">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Onion Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>400</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="10.PNG" alt="Pepper">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Pepper Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>600</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="11.PNG" alt="Wheat">
+                                    </div><div class="description">
+                                          <a href="#" class="item_name">Wheat Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="12.PNG" alt="Sun Poppy">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Sun Poppy Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="13.PNG" alt="Purp. Tomato">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Purp. Tomato Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="14.PNG" alt="Soybean">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Soybean Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>800</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="15.PNG" alt="Red Pepper">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Red Pepper Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="16.PNG" alt="Sunflower">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Sunflower Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="17.PNG" alt="WhiskyPeat">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Whisky Peat Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="18.PNG" alt="Squmpin">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Squmpin Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>1000</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="19.PNG" alt="Red Spinach">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Red Spinach Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>700</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="20.PNG" alt="Grapes">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Grapes Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+
+                              <div class="item_content_list">
+                                    <div class="item_img">
+                                          <img src="21.PNG" alt="Peas">
+                                    </div>
+                                    <div class="description">
+                                          <a href="#" class="item_name">Peas Seeds</a>
+                                    </div>
+                                    <div class="item_price">
+                                          <b>500</b>
+                                          <img src="AP.PNG" alt="AP">
+                                    </div>
+                                    <div class="buy_button">
+                                          <a href="#"><b>Buy Now</b></a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </body>
+</html>

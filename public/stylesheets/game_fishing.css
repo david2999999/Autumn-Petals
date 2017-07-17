@@ -1,0 +1,189 @@
+img{
+      max-width: 100%;
+      max-height: 100%;
+}
+div.content3{
+      display: flex;
+      /*background: #fcd29c;*/
+      background: linear-gradient(45deg, rgba(255,175,75,0.85) 0%, rgba(255,104,10,0.85) 100%);
+      opacity: .95 ;
+      border-style: 2px solid none;
+      border-radius: 15px;
+      min-width: 800px;
+    max-width: 1150px;
+      width: 90%;
+      margin-top: 100px;
+      height: auto;
+      /*margin-left: 250px;
+      margin-right: 250px;
+      position: absolute;*/
+      margin: 0 auto;
+      white-space: nowrap;
+      box-shadow: 10px 10px 25px 3px rgba(135,33,10,1);
+}
+div.item_tab{
+      display: block;
+      opacity: inherit;
+      border-color: #f71616;
+      min-width: 160px;
+    width: 85%;
+      margin: 0 auto;
+    margin-top: -10px;
+      text-align: center;
+}
+div.side_tab3{
+      display: inline-block;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 6px 6px 6px 6px;
+      min-width: 140
+      height: auto;
+      margin: 20px 10px 20px 30px;
+    padding: 10px; 
+    padding-bottom: 25px;
+      text-align: center;
+}
+
+.item_tab_elements{
+      display: block;
+      background: rgba(255, 232, 188,0.95);
+      opacity: inherit;
+      border-radius: 5px;
+      width: auto;
+      margin: 0px 10px 0px 10px;
+      font-size: 16px;
+      line-height: 24px;
+      border: transparent solid 2px;
+      transition : border-color 0.5s;
+}
+.item_tab_elements:hover{
+      border-color: orange;
+}
+
+.item_tab_elements ul{
+    padding-left: 0px;
+    margin-left: 15px;
+}
+
+.item_tab_elements ul li{
+      text-align: left;
+      list-style-type: none;
+}
+
+.item_tab_elements ul li a{
+      text-decoration: none;
+      color: brown;
+}
+
+.item_tab_elements ul li a:hover{
+      color: red;
+}
+.item_content{
+      display: flex;
+    flex-direction:column;
+      /*background: #ffddc6;*/
+      background: linear-gradient(45deg, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 42%, rgba(255,187,15,1) 100%);
+      opacity: inherit;
+      box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
+      border-radius: 10px;
+    flex: 4;
+      height: auto;
+      margin: 20px 30px 20px 20px;
+      text-align: center;
+}
+
+.header_item{
+    align-content: cross-start;
+      margin: 20px;
+    margin-right: auto;
+      background: rgba(255, 232, 188,0.95);
+      border-radius: 4px;
+      padding: 10px 40px 10px 40px;
+}
+
+
+.item_content_container{
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+      background: rgba(255, 232, 188,0.95);
+      opacity: inherit;
+      border-radius: 10px;
+      width: 90%px;
+      height: auto;
+      margin: 0px 20px 20px 20px;
+    padding-bottom: 20px;
+      float: left;
+      border: transparent solid 2px;
+      transition : border-color 0.5s;
+}
+
+.item_content_container:hover{
+      border-color: #ef4102;
+}
+
+.item_content_list{
+      display: block;
+      background: inherit;
+      border-radius: 5px;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+      width: 160px;
+      height: 145px;
+      margin: 20px 7px 10px 7px;
+      float: left;
+      transition: box-shadow 1s ease;
+}
+.item_content_list:hover{
+      border-color:#fcb3b3;
+      box-shadow: 3px 9px 113px 4px  rgba(0,62,247,1);
+}
+.item_img{
+      display: block;
+      background: white;
+      border-radius: 5px;
+      border-bottom: brown solid 1px;
+      width: 159px;
+      height: 100px;
+}
+.item_content_list:hover .item_img{
+      border-color:#fcb3b3;
+}
+.item_name{
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      color: brown;
+}
+
+.lg_tag b{
+      display: block;
+      float: left;
+}
+
+.buy_button{
+      background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(231,56,39,1) 100%);
+      padding-top: 5px;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      border: brown solid 1px;
+      height: 23px;
+}
+.buy_button:hover{
+      background: linear-gradient(45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(246,41,12,1) 18%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+}
+.buy_button a{
+      text-decoration: none;
+      color: white;
+}
+
+.description{
+      padding-top: 10px;
+      color: brown;
+      font-weight: bold;
+}
