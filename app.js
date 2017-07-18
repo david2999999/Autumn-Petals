@@ -8,13 +8,14 @@ var express         = require("express"),       // used to run the whole applica
     methodOverride  = require("method-override"),// used with restful routing
     //All of the Schemas
     User            = require("./models/user"),
-    Animal          = require("./models/animal"),
+    Pet             = require("./models/pet"),
     Gem             = require("./models/gem"),
     Crop            = require("./models/crop");
     // seedDB          = require("./seed");
     
 mongoose.Promise = global.Promise;  // prevent a warning message
-mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
+// mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
+mongoose.connect("mongodb://David:206086290@ds163232.mlab.com:63232/autumn-petals");// DATABASE HERE
 
 // mongodb://localhost/autumn-petals
 //body parser allows to see the element value from the form
@@ -68,7 +69,14 @@ app.get("/item-mall/animals", function(req, res){
     res.render("Nav_Animals");
 });
 app.get("/item-mall/pets", function(req, res){
-    res.render("Nav_Pets");
+    Pet.find({}, function(err, pets){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Pets", {pets: pets});
+        }
+    });
+    
 });
 // app.get("/item-mall/upgrades", function(req, res){
 //     res.render("Nav_Upgrades");

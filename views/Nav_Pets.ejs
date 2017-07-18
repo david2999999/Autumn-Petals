@@ -24,101 +24,104 @@
                               <h2 class="header_item">Pets</h2><br>
 
                               <div class="item_content_container">
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/31.PNG" alt="Puppy">
+                                    <% pets.forEach(function(pet){ %>
+                                          <div class="item_content_list">
+                                                <div class="item_img">
+                                                      <img src="<%=pet.img%>" alt="<%=pet.type%>">
+                                                </div>
+                                                <div class="description">
+                                                      <a href="#" class="item_name"><%=pet.type%></a>
+                                                </div>
+                                                <div class="item_price">
+                                                      <b><%=pet.price%></b>
+                                                      <img src="../Elements/AP.PNG" alt="AP">
+                                                </div>
+                                                <div class="buy_button">
+                                                      <a href="#"><b>Buy Now</b></a>
+                                                </div>
                                           </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Puppy</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>2000</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <% }); %>
+                                    
 
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/32.PNG" alt="Adolescent">
-                                          </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Adolescent</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>2500</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <!--<div class="item_content_list">-->
+                                    <!--      <div class="item_img">-->
+                                    <!--            <img src="../Elements/32.PNG" alt="Adolescent">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="description">-->
+                                    <!--            <a href="#" class="item_name">Adolescent</a>-->
+                                    <!--      </div>-->
+                                    <!--      <div class="item_price">-->
+                                    <!--            <b>2500</b>-->
+                                    <!--            <img src="../Elements/AP.PNG" alt="AP">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="buy_button">-->
+                                    <!--            <a href="#"><b>Buy Now</b></a>-->
+                                    <!--      </div>-->
+                                    <!--</div>-->
 
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/33.PNG" alt="Dog">
-                                          </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Dog</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>3000</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <!--<div class="item_content_list">-->
+                                    <!--      <div class="item_img">-->
+                                    <!--            <img src="../Elements/33.PNG" alt="Dog">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="description">-->
+                                    <!--            <a href="#" class="item_name">Dog</a>-->
+                                    <!--      </div>-->
+                                    <!--      <div class="item_price">-->
+                                    <!--            <b>3000</b>-->
+                                    <!--            <img src="../Elements/AP.PNG" alt="AP">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="buy_button">-->
+                                    <!--            <a href="#"><b>Buy Now</b></a>-->
+                                    <!--      </div>-->
+                                    <!--</div>-->
 
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/40.PNG" alt="Kitten">
-                                          </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Kitten</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>2000</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <!--<div class="item_content_list">-->
+                                    <!--      <div class="item_img">-->
+                                    <!--            <img src="../Elements/40.PNG" alt="Kitten">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="description">-->
+                                    <!--            <a href="#" class="item_name">Kitten</a>-->
+                                    <!--      </div>-->
+                                    <!--      <div class="item_price">-->
+                                    <!--            <b>2000</b>-->
+                                    <!--            <img src="../Elements/AP.PNG" alt="AP">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="buy_button">-->
+                                    <!--            <a href="#"><b>Buy Now</b></a>-->
+                                    <!--      </div>-->
+                                    <!--</div>-->
 
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/42.PNG" alt="Persian Cat">
-                                          </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Persian Cat</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>3500</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <!--<div class="item_content_list">-->
+                                    <!--      <div class="item_img">-->
+                                    <!--            <img src="../Elements/42.PNG" alt="Persian Cat">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="description">-->
+                                    <!--            <a href="#" class="item_name">Persian Cat</a>-->
+                                    <!--      </div>-->
+                                    <!--      <div class="item_price">-->
+                                    <!--            <b>3500</b>-->
+                                    <!--            <img src="../Elements/AP.PNG" alt="AP">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="buy_button">-->
+                                    <!--            <a href="#"><b>Buy Now</b></a>-->
+                                    <!--      </div>-->
+                                    <!--</div>-->
 
-                                    <div class="item_content_list">
-                                          <div class="item_img">
-                                                <img src="../Elements/41.PNG" alt="Cat">
-                                          </div>
-                                          <div class="description">
-                                                <a href="#" class="item_name">Cat</a>
-                                          </div>
-                                          <div class="item_price">
-                                                <b>3000</b>
-                                                <img src="../Elements/AP.PNG" alt="AP">
-                                          </div>
-                                          <div class="buy_button">
-                                                <a href="#"><b>Buy Now</b></a>
-                                          </div>
-                                    </div>
+                                    <!--<div class="item_content_list">-->
+                                    <!--      <div class="item_img">-->
+                                    <!--            <img src="../Elements/41.PNG" alt="Cat">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="description">-->
+                                    <!--            <a href="#" class="item_name">Cat</a>-->
+                                    <!--      </div>-->
+                                    <!--      <div class="item_price">-->
+                                    <!--            <b>3000</b>-->
+                                    <!--            <img src="../Elements/AP.PNG" alt="AP">-->
+                                    <!--      </div>-->
+                                    <!--      <div class="buy_button">-->
+                                    <!--            <a href="#"><b>Buy Now</b></a>-->
+                                    <!--      </div>-->
+                                    <!--</div>-->
                               </div>
                         </div>
                   </div>
