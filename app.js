@@ -14,9 +14,9 @@ var express         = require("express"),       // used to run the whole applica
     // seedDB          = require("./seed");
     
 mongoose.Promise = global.Promise;  // prevent a warning message
-mongoose.connect("process.env.DATABASEURL");// DATABASE HERE
+mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
 
-
+// mongodb://localhost/autumn-petals
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // does not need to include ejs extension
