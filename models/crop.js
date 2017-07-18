@@ -5,10 +5,11 @@ var CropSchema = new mongoose.Schema({
     name        : String,
     price       : Number,
     quantity    : Number,
-    growTime    : Number,
+    growTime    : String,
     season      : String,
-    tree        : Boolean,
-    legendary   : Boolean
+    tree        : {type: Boolean, default: false},
+    legendary   : {type: Boolean, default: false},
+    img         : String
 });
 
 

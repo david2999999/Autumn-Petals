@@ -11,9 +11,11 @@ var express         = require("express"),       // used to run the whole applica
     Animal          = require("./models/animal"),
     Gem             = require("./models/gem"),
     Crop            = require("./models/crop");
+    // seedDB          = require("./seed");
     
 mongoose.Promise = global.Promise;  // prevent a warning message
-// mongoose.connect("mongodb://localhost/autumn_petal");// WEBSITE HERE
+mongoose.connect("process.env.DATABASEURL");// DATABASE HERE
+
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
@@ -44,6 +46,7 @@ app.use(function(req, res, next){
   res.locals.success = req.flash("success");       // use for the flash message for success
   next();
 });
+
 
 // MAIN PAGE
 app.get("/", function(req, res){
@@ -85,10 +88,22 @@ app.get("/item-mall/gem", function(req, res){
 
 // THE GAME ROUTE 
 app.get("/game", function(req, res){
-    res.render("Nav_Crops");
+    Crop.find({}, function(err, crops){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Crops", {crops: crops});
+        }
+    });
 });
 app.get("/game/crops", function(req, res){
-    res.render("Nav_Crops");
+    Crop.find({}, function(err, crops){
+       if(err){
+           console.log(err);
+       } else{
+           res.render("Nav_Crops", {crops, crops});
+       }
+    });
 });
 app.get("/game/weather", function(req, res){
     res.render("Nav_Game_Weather");
