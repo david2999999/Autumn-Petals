@@ -13,108 +13,11 @@
             <link rel="stylesheet" href="../stylesheets/footer.css" style="text/css">
       </head>
       <body>
-            <div class="header">
-                  <header>
-                        <nav class="headerNav">
-                              <a class="title" href="Main_Page.html" style="text-decoration: none"><h1>Autumn Petals</h1></a>
-                              <ul class="navMenu">
-                                    <li class="navMenuItem"><a href="#">The Game</a>
-                                        
-                                              <ul class="dropdown">
-                                                    <li><a href="#">Features</a></li>
-                                                    <li><a href="#">Wiki</a></li>
-                                                    <li><a href="#">Getting Started</a></li>
-                                                    <li><a href="#">Controls</a></li>
-                                              </ul>
-                                        
-                                    </li>
-                                    <li class="navMenuItem"><a href="#">Community</a>
-                                        
-                                          <ul class="dropdown">
-                                                <li><a href="#">Ranking</a></li>
-                                                <li><a href="#">Guilds</a></li>
-                                                <li><a href="#">Forum</a></li>
-                                                <li><a href="#">FAQ</a></li>
-                                          </ul>
-                                        
-                                    </li>
-                                    <li class="navMenuItem"><a href="#">Support</a>
-                                        
-                                          <ul class="dropdown">
-                                                <li><a href="#">Client &amp; Driver</a></li>
-                                                <li><a href="#">Customer Support</a></li>
-                                                <li><a href="#">General Help</a></li>
-                                                <li><a href="#">Contact Us</a></li>
-                                                <li><a href="#">Terms of Service</a></li>
-                                          </ul>
-                                        
-                                    </li>
-                              </ul>
-                        </nav>
-                        <div class="signinButtons">
-                            <a href="#" class="button1">Sign Up</a>
-                            <a href="#" class="button2">Log In</a>
-                        </div>
-                  </header>
-                    <div class="banner">
-                      <div class="slider">
-                            <figure>
-                                  <div class="slide">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/A14Mu2yaZiL.png" alt="" class="image1">
-                                  </div>
-                                  <div class="slide">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/A13rrRmPP-L.png" alt="" class="image1">
-                                  </div>
-                                  <div class="slide">
-                                        <img src="https://i.ytimg.com/vi/tJ5mY0651l8/maxresdefault.jpg" alt="" class="image1">
-                                  </div>
-                                  <div class="slide">
-                                        <img src="https://i2.wp.com/3.bp.blogspot.com/-h7CTYU7uLcA/ViT6BNb4WNI/AAAAAAAAlR0/rMvvLvCvZno/s1600/2.jpg" alt="Farming Game" class="image1">
-                                  </div>
-                                  <div class="slide">
-                                        <img src="http://img.apkask.com/2015/04/03222309_1.jpg" alt="Farming Game" class="image1">
-                                  </div>
-                            </figure>
-                      </div>
-                        <div class="downloadButtons">
-                            <block class="spaceHolder"></block>
-                            <div class="winDownload">
-                               <img src="https://goo.gl/wG4fqn" class="image">
-                               <a href="#" class="buttonText">DOWNLOAD</a>
-                            </div>
-                            <div class="macDownload">
-                               <img src="https://goo.gl/5AdbSh" class="image">
-                               <a href="#" class="buttonText">DOWNLOAD</a>
-                            </div>
-                            <div class="mobileDownload">
-                               <img src="https://goo.gl/ZyTS4e" class="image">
-                               <a href="#" class="buttonText">DOWNLOAD</a>
-                            </div>
-                            <block class="spaceHolder"></block>
-                        </div>
-                    </div>
-          
-                 
-                    <div class="nav2">
-                                <ul class="subNav">
-                                        
-                                        <li ><a href="Nav_News.html">News</a>
-                                         </li>
-                                        
-                                        <li><a href="#">World</a>
-                                        </li>
-                                        
-                                        <li><a href="Nav_Crops.html">The Game</a>
-                                        </li>
-                                        
-                                        <li><a href="Nav_Seeds.html">Item Mall</a>
-                                        </li>
-                                        
-                                        <li><a href="#">Media</a>
-                                        </li>
-                                </ul>
-                    </div>
-                  </div><br><br>
+            <div class="mainContent">
+                  <% include ./partials/header1 %>
+                  <% include ./partials/banner %>
+                  <% include ./partials/header2 %>
+                  <br><br>
                   <div class="content2">
                         <% include ./partials/side_tab_news %>
                         <div class="news_content">
