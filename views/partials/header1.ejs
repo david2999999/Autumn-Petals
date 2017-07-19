@@ -36,7 +36,29 @@
                               </ul>
                         </nav>
                         <div class="signinButtons">
-                            <a href="#" class="button1">Sign Up</a>
-                            <a href="#" class="button2">Log In</a>
+                              <% if(!currentUser){ %>
+                                    <a href="/register" class="button1">Sign Up</a>
+                                    <a href="/login" class="button2">Log In</a>
+                             <% }else{ %>
+                                    <a href="#" class="button1"><%=currentUser.username%></a>
+                                    <a href="/logout" class="button2">Log Out</a>
+                              <% } %>
                         </div>
                   </header>
+                  <div class="container2">
+                      <% if(error && error.length > 0){ %>
+                          <div class="alert alert-danger" role="alert">
+                              <%= error %>
+                          </div>
+                      <% } %>
+                      <% if(success && success.length > 0){ %>
+                          <div class="alert alert-success" role="alert">
+                              <%= success %>
+                          </div>
+                      <% } %>
+                      <% if(currentUser && currentUser.isAdmin){ %>
+                          <div class="alert alert-success" role="alert">
+                              Administrator
+                          </div>
+                      <% } %>
+                  </div>

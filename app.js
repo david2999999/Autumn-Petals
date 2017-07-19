@@ -6,13 +6,22 @@ var express         = require("express"),       // used to run the whole applica
     flash           = require("connect-flash"), // allows flash messages such as when the user logs in or log out
     LocalStrategy   = require("passport-local"),// authenticates username and password
     methodOverride  = require("method-override"),// used with restful routing
+    // nodemailer      = require("nodemailer"),    // used for emailing, such as forget password
+    async           = require("async"),
+    crypto          = require("crypto"),        // encoding data such as the password
     //All of the Schemas
+    Animal          = require("./models/animal"),
+    Insect          = require("./models/insect"),
+    Tree            = require("./models/tree"),
+    Seed            = require("./models/seed"),
     User            = require("./models/user"),
     Pet             = require("./models/pet"),
     Gem             = require("./models/gem"),
+    Weather         = require("./models/weather"),
     Crop            = require("./models/crop");
     // seedDB          = require("./seed");
     
+console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message
 // mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
 mongoose.connect("mongodb://David:206086290@ds163232.mlab.com:63232/autumn-petals");// DATABASE HERE
@@ -54,8 +63,9 @@ app.get("/", function(req, res){
     res.render("Main_Page");
 });
 
-
-// ITEM MALL ROUTE
+////////////////////
+// ITEM MALL ROUTE//
+////////////////////
 app.get("/item-mall", function(req, res){
     res.render("Nav_Seeds");
 });
@@ -93,8 +103,9 @@ app.get("/item-mall/gem", function(req, res){
 
 
 
-
-// THE GAME ROUTE 
+////////////////////
+// THE GAME ROUTE //
+////////////////////
 app.get("/game", function(req, res){
     Crop.find({}, function(err, crops){
         if(err){
@@ -132,8 +143,9 @@ app.get("/game/contest", function(req, res){
     res.render("Nav_Contest");
 });
 
-
-// THE NEWS ROUTE 
+////////////////////
+// THE NEWS ROUTE //
+////////////////////
 app.get("/announce", function(req, res){
     res.render("Nav_News");
 });
@@ -158,13 +170,67 @@ app.get("/announce/maintenance", function(req, res){
 
 
 
+//////////////////////////
+// AUTHENTICATION ROUTES//
+//////////////////////////
+// shows the register form
+app.get("/register", function(req, res) {
+   res.render("Register",{page: "Register"}) ;
+});
+
+// handles register logic
+app.post("/register", function(req, res){
+    var newUser = new User(
+        {
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email
+        });
+        
+        User.register(newUser, req.body.password, function(err, user){
+           if(err){
+                return res.render("Register", {error: err.message});
+           } 
+           
+        passport.authenticate("local")(req, res, function(){
+            req.flash("success", "Welcome to Autumn Petals " + user.username);
+            res.redirect("/");
+        });
+    });
+});
+
+//shows the login page
+app.get("/login", function(req, res) {
+    res.render("Login", {page: "Register"});
+});
+
+// Handling log in logic
+app.post("/login", passport.authenticate("local",
+    {
+        successRedirect: "/",
+        failureRedirect: "/login"
+    }),function(req, res){
+});
 
 
+// logout route
+app.get("/logout", function(req, res){
+    req.logout();
+    req.flash("success", "Logged out successfully. Hope to see you soon!");
+    res.redirect("/");
+});
 
-// RUNS THE SERVER
+
+////////////////////
+// RUNS THE SERVER//
+////////////////////
 app.listen(process.env.PORT , process.env.IP, function(){
     console.log("Autumn Petals has Started");
 });
+
+
+
+
     
     
 //name      url         verb    description

@@ -3,12 +3,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 0 auto;
-      margin-top: auto;
+    margin-top: auto;
     padding-top: 15px;
-      width: 100%;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-      /*position: absolute;*/
+     /* position: absolute;*/
+     /*bottom: 0;*/
     /*max-width: 1150px;*/
     
     

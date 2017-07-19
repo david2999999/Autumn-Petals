@@ -38,7 +38,7 @@ div.side_tab3{
       opacity: inherit;
       box-shadow: 5px 5px 8px 1px rgba(150,38,38,1);
       border-radius: 6px 6px 6px 6px;
-      min-width: 140
+      min-width: 140;
       height: auto;
       margin: 20px 10px 20px 30px;
     padding: 10px; 

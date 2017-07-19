@@ -1,11 +1,10 @@
 var mongoose = require("mongoose");
 
-var GemSchema = new mongoose.Schema({
+var InsectSchema = new mongoose.Schema({
     type: String,
-    price: Number,
     location: String,
     img: String,
     legendary: {type: Boolean, default: false}
 });
 
-module.exports = mongoose.model("Gem", GemSchema);
+module.exports = mongoose.model("Insect", InsectSchema);

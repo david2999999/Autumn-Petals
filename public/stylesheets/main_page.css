@@ -128,7 +128,7 @@ header{
 }
 
 .dropdown li:hover {
-      box-shadow: 0px 0px 6px 4px #bc2800;
+    box-shadow: 0px 0px 6px 4px #bc2800;
     transition: 0.5s;
 
 }
@@ -254,6 +254,60 @@ div.container{
 }
 
 
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+  color: #843534;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+.container2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container2 {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container2 {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container2 {
+    width: 1170px;
+  }
+}
 
 
 @media (min-width: 1150px){
