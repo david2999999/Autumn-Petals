@@ -183,7 +183,6 @@ app.post("/register", function(req, res){
     var newUser = new User(
         {
             username: req.body.username,
-            password: req.body.password,
             email: req.body.email
         });
         

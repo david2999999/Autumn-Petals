@@ -78,7 +78,6 @@ div.side_tab3{
 }
 .content3 .side_tab3 .item_tab_elements ul li a:hover{
       color: red;
-      background: white;
 }
 .item_content{
       display: flex;
