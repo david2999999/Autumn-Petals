@@ -6,8 +6,8 @@ var express         = require("express"),       // used to run the whole applica
     flash           = require("connect-flash"), // allows flash messages such as when the user logs in or log out
     LocalStrategy   = require("passport-local"),// authenticates username and password
     methodOverride  = require("method-override"),// used with restful routing
-    // nodemailer      = require("nodemailer"),    // used for emailing, such as forget password
-    async           = require("async"),
+    nodemailer      = require("nodemailer"),    // used for emailing, such as forget password
+    async           = require("async"),         // used with nodemailer for password reset
     crypto          = require("crypto"),        // encoding data such as the password
     //All of the Schemas
     Animal          = require("./models/animal"),
@@ -21,12 +21,12 @@ var express         = require("express"),       // used to run the whole applica
     Crop            = require("./models/crop");
     // seedDB          = require("./seed");
     
-console.log(process.env.DATABASEURL);
+// console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message
 // mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
-mongoose.connect("mongodb://David:206086290@ds163232.mlab.com:63232/autumn-petals");// DATABASE HERE
 
-// mongodb://localhost/autumn-petals
+mongoose.connect("mongodb://localhost/autumn-petals");
+
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // does not need to include ejs extension
@@ -211,7 +211,6 @@ app.post("/login", passport.authenticate("local",
     }),function(req, res){
 });
 
-
 // logout route
 app.get("/logout", function(req, res){
     req.logout();
@@ -219,7 +218,123 @@ app.get("/logout", function(req, res){
     res.redirect("/");
 });
 
+//FORGOT PASSWORD ROUTE
+app.get('/forgot', function(req, res) {
+  res.render('Forgot');
+});
 
+app.post('/forgot', function(req, res, next) {
+  async.waterfall([
+    function(done) {
+      crypto.randomBytes(20, function(err, buf) {
+        var token = buf.toString('hex');
+        done(err, token);
+      });
+    },
+    function(token, done) {
+      User.findOne({ email: req.body.email }, function(err, user) {
+        if (!user) {
+          req.flash('error', 'No account with that email address exists.');
+          return res.redirect('/forgot');
+        }
+
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+        user.save(function(err) {
+          done(err, token, user);
+        });
+      });
+    },
+    function(token, user, done) {
+      var smtpTransport = nodemailer.createTransport({
+        service: 'Gmail', 
+        auth: {
+          user: 'pkmgo52@gmail.com',
+          pass: process.env.GMAILPW
+        }
+      });
+      var mailOptions = {
+        to: user.email,
+        from: 'pkmgo52@gmail.com',
+        subject: 'Password Reset',
+        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+      };
+      smtpTransport.sendMail(mailOptions, function(err) {
+        console.log('mail sent');
+        console.log(process.env.GMAILPW);
+        req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+        done(err, 'done');
+      });
+    }
+  ], function(err) {
+    if (err) return next(err);
+    res.redirect('/forgot');
+  });
+});
+
+app.get('/reset/:token', function(req, res) {
+  User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+    if (!user) {
+      req.flash('error', 'Password reset token is invalid or has expired.');
+      return res.redirect('/forgot');
+    }
+    res.render('Reset', {token: req.params.token});
+  });
+});
+
+app.post('/reset/:token', function(req, res) {
+    async.waterfall([
+        function(done) {
+              User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+                    if (!user) {
+                          req.flash('error', 'Password reset token is invalid or has expired.');
+                          return res.redirect('back');
+                    }
+                    if(req.body.password === req.body.confirm) {
+                         user.setPassword(req.body.password, function(err) {
+                            user.resetPasswordToken = undefined;
+                            user.resetPasswordExpires = undefined;
+            
+                        user.save(function(err) {
+                          req.logIn(user, function(err) {
+                            done(err, user);
+                          });
+                        });
+                      });
+                    } else {
+                        req.flash("error", "Passwords do not match.");
+                        return res.redirect('back');
+                }
+          });
+    },
+    function(user, done) {
+          var smtpTransport = nodemailer.createTransport({
+            service: 'Gmail', 
+            auth: {
+                  user: 'pkmgo52@gmail.com',
+                  pass: process.env.GMAILPW
+        }
+    });
+      var mailOptions = {
+            to: user.email,
+            from: 'pkmgo52@gmail.com',
+            subject: 'Your password has been changed',
+            text: 'Hello,\n\n' +
+              'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+          };
+          smtpTransport.sendMail(mailOptions, function(err) {
+                req.flash('success', 'Success! Your password has been changed.');
+                done(err);
+             });
+            }
+          ], function(err) {
+            res.redirect('/');
+      });
+});
 ////////////////////
 // RUNS THE SERVER//
 ////////////////////

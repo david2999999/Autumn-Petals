@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose =require("passport-local-mongoose");
+
 mongoose.Promise = global.Promise;
 
 var UserSchema = new mongoose.Schema({
@@ -8,7 +9,7 @@ var UserSchema = new mongoose.Schema({
     email: {type: String, unique: true, require: true},
     isAdmin: {type: Boolean, default: false},
     resetPasswordToken: String,
-    resetPasswordExpire: Date,
+    resetPasswordExpires: Date,
     ap: Number
     // crop: [
     //          {
