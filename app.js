@@ -23,9 +23,9 @@ var express         = require("express"),       // used to run the whole applica
     
 // console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message
-// mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
+mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
 
-mongoose.connect("mongodb://localhost/autumn-petals");
+// mongoose.connect("mongodb://localhost/autumn-petals");
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
