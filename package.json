@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "David Jiang",
+  "author": "David Jiang, Haosen Zheng, Henry Chen",
   "license": "ISC",
   "dependencies": {
     "async": "^2.5.0",

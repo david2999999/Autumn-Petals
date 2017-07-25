@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Autumn Petals</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" style="text/css">
+      </head>
                   <header>
                         <nav class="headerNav">
                               <a class="title" href="/" style="text-decoration: none"><h1>Autumn Petals</h1></a>
@@ -5,30 +12,30 @@
                                     <li class="navMenuItem"><a href="#">The Game</a>
 
                                               <ul class="dropdown">
-                                                    <li><a href="#">Features</a></li>
-                                                    <li><a href="#">Wiki</a></li>
+                                                    <li><a href="#">Features <i class="fa fa-linode" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#">Wiki <i class="fa fa-wikipedia-w" aria-hidden="true"></i> </a></li>
                                                     <li><a href="#">Getting Started</a></li>
-                                                    <li><a href="#">Controls</a></li>
+                                                    <li><a href="#">Controls <i class="fa fa-gamepad" aria-hidden="true"></i></a></li>
                                               </ul>
 
                                     </li>
                                     <li class="navMenuItem"><a href="#">Community</a>
 
                                           <ul class="dropdown">
-                                                <li><a href="#">Ranking</a></li>
-                                                <li><a href="#">Guilds</a></li>
-                                                <li><a href="#">Forum</a></li>
-                                                <li><a href="#">FAQ</a></li>
+                                                <li><a href="#">Ranking <i class="fa fa-trophy" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">Guilds <i class="fa fa-users" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">Forum <i class="fa fa-comments-o" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">FAQ <i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
                                           </ul>
 
                                     </li>
                                     <li class="navMenuItem"><a href="#">Support</a>
 
                                           <ul class="dropdown">
-                                                <li><a href="#">Client &amp; Driver</a></li>
+                                                <li><a href="#">Client &amp; Driver </a></li>
                                                 <li><a href="#">Customer Support</a></li>
-                                                <li><a href="#">General Help</a></li>
-                                                <li><a href="#">Contact Us</a></li>
+                                                <li><a href="#">General Help <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">Contact Us <i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                                 <li><a href="#">Terms of Service</a></li>
                                           </ul>
 
@@ -37,28 +44,29 @@
                         </nav>
                         <div class="signinButtons">
                               <% if(!currentUser){ %>
-                                    <a href="/register" class="button1">Sign Up</a>
-                                    <a href="/login" class="button2">Log In</a>
+                                    <a href="/register" class="button1"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+                                    <a href="/login" class="button2"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                              <% }else{ %>
-                                    <a href="#" class="button1"><%=currentUser.username%></a>
-                                    <a href="/logout" class="button2">Log Out</a>
+                                    <a href="#" class="button1"><i class="fa fa-user" aria-hidden="true"></i> <%=currentUser.username%></a>
+                                    <a href="#" class="button1"><i class="fa fa-rebel" aria-hidden="true"></i> <%=currentUser.ap%> AP</a>
+                                    <a href="/logout" class="button2"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
                               <% } %>
                         </div>
                   </header>
                   <div class="container2">
                       <% if(error && error.length > 0){ %>
                           <div class="alert alert-danger" role="alert">
-                              <%= error %>
+                              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= error %>
                           </div>
                       <% } %>
                       <% if(success && success.length > 0){ %>
                           <div class="alert alert-success" role="alert">
-                              <%= success %>
+                              <i class="fa fa-check" aria-hidden="true"></i> <%= success %>
                           </div>
                       <% } %>
                       <% if(currentUser && currentUser.isAdmin){ %>
                           <div class="alert alert-success" role="alert">
-                              Administrator
+                              <i class="fa fa-lock" aria-hidden="true"></i> Administrator
                           </div>
                       <% } %>
                   </div>
