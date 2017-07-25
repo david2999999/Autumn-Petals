@@ -167,7 +167,16 @@ app.get("/announce/maintenance", function(req, res){
 //     res.render("Nav_Server_Status");
 // });
 
+/////////////////
+// MEDIA ROUTES//
+////////////////
+app.get("/media", function(req, res) {
+   res.render("Nav_Media_Gallery"); 
+});
 
+app.get("/media/gallery", function(req, res) {
+    res.render("Nav_Media_Gallery"); 
+});
 
 //////////////////////////
 // AUTHENTICATION ROUTES//
