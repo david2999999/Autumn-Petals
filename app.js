@@ -163,9 +163,9 @@ app.get("/announce/events", function(req, res){
 app.get("/announce/maintenance", function(req, res){
     res.render("Nav_Maintenance");
 });
-// app.get("/announce/server", function(req, res){
-//     res.render("Nav_Server_Status");
-// });
+app.get("/announce/server", function(req, res){
+    res.render("Nav_Server_Status");
+});
 
 /////////////////
 // MEDIA ROUTES//

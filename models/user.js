@@ -10,7 +10,7 @@ var UserSchema = new mongoose.Schema({
     isAdmin: {type: Boolean, default: false},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
-    ap: Number
+    ap: {type: Number, default: 0}
     // crop: [
     //          {
     //             type: mongoose.Schema.Type.ObjectId,
