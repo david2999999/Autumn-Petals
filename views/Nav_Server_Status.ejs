@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../stylesheets/news_content.css" style="text/css">
             <link rel="stylesheet" href="../stylesheets/footer.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/form.css" style="text/css">
             <link rel="shortcut icon" type="image/x-icon" href="../Elements/favicon.ico"/>
       </head>
       <body>
@@ -23,12 +24,16 @@
                         <% include ./partials/side_tab_news %>
                         <div class="news_content">
                               <h2 class="header_news">Server Status</h2><br>
-                              <div class="news_content_list">
+                              <div class="item_content_container">
                                     <img style="width: 100%; height: 100%;"src="../image/server.PNG" alt="Haosen">
                               </div>
                         </div>
                   </div>
               </div>
             <% include ./partials/footer %>
+            
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="../scripts/ModalLogin.js"></script>
       </body>
 </html>

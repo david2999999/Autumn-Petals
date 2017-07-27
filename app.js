@@ -25,13 +25,13 @@ var express         = require("express"),       // used to run the whole applica
     
 // console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message from mongoose
-mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
-// mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
+// mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
+mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // does not need to include ejs extension
-app.use(express.static(__dirname + "/public")); // uses the css stylesheet
+app.use(express.static(__dirname + "/public")); // Establish the static file server to serve the css stylesheet and jquery
 app.use(methodOverride("_method"));
 
 // PASSPORT CONFIGURATIONS

@@ -11,6 +11,8 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../stylesheets/news_content.css" style="text/css">
             <link rel="stylesheet" href="../stylesheets/footer.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/form.css" style="text/css">
+            <link rel="stylesheet" href="../stylesheets/pagination.css" style="text/css">
             <link rel="shortcut icon" type="image/x-icon" href="../Elements/favicon.ico"/>
       </head>
       <body>
@@ -23,7 +25,7 @@
                         <% include ./partials/side_tab_news %>
                         <div class="news_content">
                               <h2 class="header_news">Game Updates</h2><br>
-                              <div class="news_content_list">
+                              <div class="item_content_container">
                                     <dl class="article1">
                                           <dt class="subject1">
                                                 <a href="#" title="Major Game Adjustments">Major Game Adjustments</a>
@@ -90,9 +92,41 @@
                                                 Please read the following...&nbsp;&nbsp;&nbsp;<a href="#" title="Opening Date Release" class="more">Read More&#187;&nbsp;</a>
                                           </dd>
                                     </dl>
+                                    
+                                    <!--/////////////////////////////////////////-->
+                                    <!--//////////////////////////////////////-->
+                                    
+                                    <nav aria-label="Page navigation">
+                                          <ul class="pagination">
+                                                <li>
+                                                    <a href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                         </ul>
+                                    </nav>
+                                    <!--//////////////////////////////////////////////////////-->
+                                    <!--/////////////////////////////////////////////////////-->           
+                                    
+                                    </div>
                               </div>
                         </div>
                   </div>
             <% include ./partials/footer %>
+            
+            
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="../scripts/ModalLogin.js"></script>
       </body>
 </html>

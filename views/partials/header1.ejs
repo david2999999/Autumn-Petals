@@ -44,8 +44,8 @@
                         </nav>
                         <div class="signinButtons">
                               <% if(!currentUser){ %>
-                                    <a href="/register" class="button1"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
-                                    <a href="/login" class="button2"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
+                                    <a href="/register" id="signupButton" class="button1"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+                                    <a href="/login" id="loginButton" class="button2"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                              <% }else{ %>
                                     <a href="#" class="button1"><i class="fa fa-user" aria-hidden="true"></i> <%=currentUser.username%></a>
                                     <a href="#" class="button1"><i class="fa fa-rebel" aria-hidden="true"></i> <%=currentUser.ap%> AP</a>

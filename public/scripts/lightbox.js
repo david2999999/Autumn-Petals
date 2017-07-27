@@ -14,7 +14,8 @@ $("body").append($overlay);
 
 $(".item_img a").click(function(event){
     event.preventDefault();
-    var href = $(this).attr("href");
+    console.log("click detected on a legenmdary tree");
+    var href = $(this).children("img").attr("src");
     var description = $(this).siblings("p").text();
     console.log(description);
     
