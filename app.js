@@ -9,7 +9,7 @@ var express         = require("express"),       // used to run the whole applica
     nodemailer      = require("nodemailer"),    // used for emailing, such as forget password
     async           = require("async"),         // used with nodemailer for password reset
     crypto          = require("crypto"),        // encoding data such as the password
-    //All of the Schemas
+    //All of the Schema Models
     Animal          = require("./models/animal"),
     Insect          = require("./models/insect"),
     Tree            = require("./models/tree"),
@@ -17,14 +17,16 @@ var express         = require("express"),       // used to run the whole applica
     User            = require("./models/user"),
     Pet             = require("./models/pet"),
     Gem             = require("./models/gem"),
+    Fish            = require("./models/fish"),
     Weather         = require("./models/weather"),
     Crop            = require("./models/crop");
-    // seedDB          = require("./seed");
+    
+    // seedDB       = require("./seed");
     
 // console.log(process.env.DATABASEURL);
-mongoose.Promise = global.Promise;  // prevent a warning message
-mongoose.connect(process.env.DATABASEURL);// DATABASE HERE
-// mongoose.connect("mongodb://localhost/autumn-petals");
+mongoose.Promise = global.Promise;  // prevent a warning message from mongoose
+mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
+// mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
@@ -127,7 +129,13 @@ app.get("/game/weather", function(req, res){
     res.render("Nav_Game_Weather");
 });
 app.get("/game/fishing", function(req, res){
-    res.render("Nav_Fishing");
+    Fish.find({}, function(err, fish){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Fishing", {fishs: fish});
+        }
+    });    
 });
 app.get("/game/mining", function(req, res){
     res.render("Nav_Game_Mining");
@@ -211,12 +219,13 @@ app.get("/login", function(req, res) {
     res.render("Login", {page: "Register"});
 });
 
-// Handling log in logic
+// Handling login logic
 app.post("/login", passport.authenticate("local",
     {
         successRedirect: "/",
         failureRedirect: "/login"
     }),function(req, res){
+        
 });
 
 // logout route

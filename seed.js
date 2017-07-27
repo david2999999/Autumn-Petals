@@ -11,7 +11,7 @@ var data = [
         img: "../image/3.PNG"
     },
     {
-        name: "Strawberry",
+        name: "Raspberry",
         price: 200,
         quantity: 10,
         growTime: "2 days",
@@ -32,17 +32,18 @@ function seedDB(){
     Crop.remove({}, function(err){
         if(err){
             console.log(err);
-        }else{
+        } else {
             console.log("removed Crops");
-                data.forEach(function(crop){
-                    Crop.create(crop, function(err, crops){
-                        if(err){
-                          console.log(err);
-                        } else{
-                            console.log("added a crop")
-                        }    
-                    });
+            
+            data.forEach(function(crop){
+                Crop.create(crop, function(err, crops){         
+                    if(err){
+                        console.log(err);
+                    } else{
+                        console.log("added a crop")
+                    }    
                 });
+            });
         }
     });
 }

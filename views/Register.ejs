@@ -17,21 +17,21 @@
                 <div id="form-container">
                     <h1 id="header">Sign Up</h1>
                         <form action="/register" method="post">
-                            <div class="form-group">
-                                <input class="form-control" type="text" name="username" placeholder="Username" required="true">
+                            <div class="inputWrapper">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i><input class="form-control" type="text" name="username" placeholder="Username" required="true">
                             </div> 
-                             <div class="form-group">
-                                <input class="form-control" type="password" name="password" placeholder="Password" required="true">
+                             <div class="inputWrapper">
+                                <i class="fa fa-key" aria-hidden="true"></i><input class="form-control" type="password" name="password" placeholder="Password" required="true">
                             </div>          
-                            <div class="form-group">
-                                <input class="form-control" type="email" name="email" placeholder="Email" required="true">
+                            <div class="inputWrapper">
+                                <i class="fa fa-envelope" aria-hidden="true"></i><input class="form-control" type="email" name="email" placeholder="Email" required="true">
                             </div>
                              <div class="form-group">
                                 <button class="btn">Register</button>
                             </div> 
                         </form>
                     <a class="links" href="/">Go Back</a><br>
-                    <a class="links" href="/forgot">Forgot Password</a>
+                    <!--<a class="links" href="/forgot">Forgot Password</a>-->
                 </div>
             </div>
             <% include ./partials/footer %>

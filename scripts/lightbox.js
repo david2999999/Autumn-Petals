@@ -1,5 +1,5 @@
 //when user clicked on the link of the items in item mall or the wiki, a Lightbox will be shown feturing the item and more information; 
-
+/*global $*/
 
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
