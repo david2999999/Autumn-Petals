@@ -217,7 +217,7 @@ div.side_tab3{
 }
 
 
-#overlay {
+#galleryOverlay {
     display: table-cell;
     background: rgba(0,0,0,0.75);
     width: 100%;
@@ -230,10 +230,10 @@ div.side_tab3{
     transition: 0.3s;
 }
 
-#overlay img{
+#galleryOverlay img{
     margin-top: 15%;
 }
-#overlay p{
+#galleryOverlay p{
     color: white;
     font-size: 1.5em;
     font-weight: 400;

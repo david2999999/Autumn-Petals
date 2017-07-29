@@ -203,14 +203,14 @@ app.post("/register", function(req, res){
         });
         
         User.register(newUser, req.body.password, function(err, user){
-           if(err){
-                return res.render("Register", {error: err.message});
+            if(err){
+                return res.render("req.url", {error: err.message});
            } 
            
-        passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to Autumn Petals " + user.username);
-            res.redirect("/");
-        });
+            passport.authenticate("local")(req, res, function(){
+                req.flash("Success", "Welcome to Autumn Petals " + user.username);
+                res.redirect("/");
+            });
     });
 });
 
@@ -223,7 +223,7 @@ app.get("/login", function(req, res) {
 app.post("/login", passport.authenticate("local",
     {
         successRedirect: "/",
-        failureRedirect: "/login"
+        failureRedirect: "req.body.url"
     }),function(req, res){
         
 });

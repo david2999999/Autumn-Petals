@@ -1,15 +1,15 @@
 //when user clicked on the link of the items in item mall or the wiki, a Lightbox will be shown feturing the item and more information; 
 /*global $*/
 
-var $overlay = $('<div id="overlay"></div>');
+var $galleryOverlay = $('<div id="galleryOverlay"></div>');
 var $image = $("<img>");
 var $caption = $("<p></p>");
 $caption.addClass("description");
 
-$overlay.hide();
-$overlay.append($image);
-$overlay.append($caption);
-$("body").append($overlay);
+$galleryOverlay.hide();
+$galleryOverlay.append($image);
+$galleryOverlay.append($caption);
+$("body").append($galleryOverlay);
 
 
 $(".item_img a").click(function(event){
@@ -21,10 +21,10 @@ $(".item_img a").click(function(event){
     
     $image.attr("src", href);
     $caption.text(description);
-    $overlay.show();
+    $galleryOverlay.show();
     
 });
 
-$overlay.click(function(){
+$galleryOverlay.click(function(){
     $(this).hide();
 });
