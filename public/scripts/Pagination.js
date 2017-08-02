@@ -23,7 +23,7 @@ var refreshMasonry = function(){
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-item',
                 columnCount: 2,
-                isAnimated: false,
+                transition: 0,
                 percentPosition: true
             });
             console.log("MasonryJs is refreshed");
