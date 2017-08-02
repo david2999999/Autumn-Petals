@@ -16,7 +16,7 @@ var data = [
         quantity: 10,
         growTime: "2 days",
         season: "Spring",
-        img: "../image/3.PNG"
+        img: "../image/4.PNG"
     },
     {
         name: "Cherry",
@@ -24,7 +24,7 @@ var data = [
         quantity: 10,
         growTime: "2 days",
         season: "Spring",
-        img: "../image/3.PNG"
+        img: "../image/4.PNG"
     }
 ]
 

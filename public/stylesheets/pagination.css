@@ -23,18 +23,18 @@
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
   margin-left: 0;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
+.pagination > li > span:hover
+/*.pagination > li > a:focus,
+.pagination > li > span:focus */{
   z-index: 2;
   color: white;
   background-color: orange;
@@ -49,7 +49,7 @@
   z-index: 3;
   color: white;
   cursor: default;
-  background-color: #C54A21;
+  background-color: #ea9f25;
   border-color: white;
 }
 .pagination > .disabled > span,

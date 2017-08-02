@@ -142,6 +142,7 @@ div.side_tab3{
       margin: 20px 10px 10px 10px;
       transition: box-shadow 1s ease;
 }
+
 .item_content_list:hover{
       border-color:#fcb3b3;
       box-shadow: 3px 9px 113px 0px rgba(255,208,0,1);
@@ -157,6 +158,53 @@ div.side_tab3{
 .item_content_list:hover .item_img{
       border-color:#fcb3b3;
 }
+
+.item_content_list2{
+      display: block;
+    position: relative;
+      background: inherit;
+      border-color: brown;
+      border-style: solid;
+      border-width: 1px;
+      width: 200px;
+      height: 202px;
+      margin: 20px 10px 10px 10px;
+      transition: box-shadow 1s ease;
+}
+
+.item_img2{
+      display: block;
+      background: white;
+      border-radius: 5px;
+      border-bottom: brown solid 1px;
+      width: 200px;
+      height: 100px;
+}
+
+.item_content_list2:hover{
+      border-color:#fcb3b3;
+      box-shadow: 3px 9px 113px 0px rgba(7,215,255,1);
+}
+
+.item_content_list2:hover .item_img2{
+      border-color:#fcb3b3;
+}
+
+.item_price2{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 7px 10px 7px 65px;
+      font-size: 17px;
+}
+
+.item_price2 b{
+      display: block;
+      float: left;
+      padding-top: 5px;
+      padding-right: 10px;
+}
+
 .item_name{
       display: block;
       text-align: center;

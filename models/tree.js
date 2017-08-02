@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 var TreeSchema = new mongoose.Schema({
-    name        : String,
+    type        : String,
     price       : Number,
     quantity    : Number,
     growTime    : String,

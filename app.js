@@ -22,7 +22,8 @@ var express         = require("express"),       // used to run the whole applica
     Crop            = require("./models/crop");
     
     // seedDB       = require("./seed");
-    
+    // seedDB();
+
 // console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message from mongoose
 mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
@@ -68,7 +69,14 @@ app.get("/", function(req, res){
 // ITEM MALL ROUTE//
 ////////////////////
 app.get("/item-mall", function(req, res){
-    res.render("Nav_Seeds");
+    Crop.find({}, function(err, seed) {
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Seeds",{seed : seed});
+        }
+    });
+    // res.render("Nav_Seeds");
 });
 app.get("/item-mall/seeds", function(req, res){
     res.render("Nav_Seeds");
@@ -101,6 +109,16 @@ app.get("/item-mall/gem", function(req, res){
 // app.get("/item-mall/expboost", function(req, res){
 //     res.render("Nav_ExpBoost");
 // });
+app.get("/item-mall/item/:id/:name", function(req, res){
+    // Crop.findById(req.params.id,function(err, item){
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         res.render("Item_Seeds",{item: item});
+    //     }
+    // });
+    res.render("Item_Seeds");
+});
 
 
 
@@ -199,7 +217,9 @@ app.post("/register", function(req, res){
     var newUser = new User(
         {
             username: req.body.username,
-            email: req.body.email
+            email: req.body.email,
+            //Upon signing up, every user obtains 1000 AP
+            ap: 1000
         });
         
         User.register(newUser, req.body.password, function(err, user){
@@ -351,6 +371,13 @@ app.post('/reset/:token', function(req, res) {
             res.redirect('/');
       });
 });
+
+
+
+
+
+
+
 ////////////////////
 // RUNS THE SERVER//
 ////////////////////

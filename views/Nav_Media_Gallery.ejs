@@ -14,7 +14,8 @@
             <link rel="stylesheet" href="../stylesheets/form.css" style="text/css">
             <link rel="stylesheet" href="../stylesheets/pagination.css" style="text/css">
             <link rel="shortcut icon" type="image/x-icon" href="../Elements/favicon.ico"/>
-            <link rel="stylesheet" href="../stylesheets/media_gallery.css" style="text/css">
+            <!--link rel="stylesheet" href="../stylesheets/media_gallery.css" style="text/css"-->
+            <link rel="stylesheet" href="../stylesheets/gallery_masonry.css" style="text/css">
 
       </head>
       <body>
@@ -30,51 +31,72 @@
                               <h2 class="header_item">Gallery</h2><br>
                               <div class="item_content_container1">
 
-                                    <div class="row">
-                                      <div class="col-sm-11 col-md-5 col-lg-6">
-                                        <div class="thumbnail">
+                                    <div class="row grid">
+                                      <div class="col-sm-11 col-md-5 col-lg-6 grid-item">
+                                        <!--div class="thumbnail"-->
                                           <img src="../Elements/80.PNG" alt="...">
-                                            <h3></h3>
-                                        </div>
+                                            
+                                        <!--/div-->
                                       </div>
                                       
-                                      <div class="col-sm-11 col-md-5 col-lg-5">
-                                        <div class="thumbnail">
+                                      <div class="col-sm-11 col-md-5 col-lg-5 grid-item">
+                                        <!--div class="thumbnail"-->
                                           <img src="../Elements/76.PNG" alt="...">
-                                            <h3></h3>
-                                        </div>
+                                            
+                                        <!--/div-->
                                       </div>
                                       
-                                       <div class="col-sm-11 col-md-5 col-lg-5">
+                                       <div class="col-sm-11 col-md-5 col-lg-5 grid-item">
                                         <div class="thumbnail">
                                           <img src="../Elements/74.PNG" alt="...">
-                                            <h3></h3>
+                                            
                                         </div>
                                       </div>
                                       
-                                      <div class="col-sm-11 col-md-4 col-lg-5">
-                                        <div class="thumbnail">
+                                      <div class="col-sm-11 col-md-4 col-lg-5 grid-item">
+                                        <!--div class="thumbnail"-->
                                           <img src="../Elements/77.PNG" alt="...">
-                                            <h3></h3>
-                                        </div>
+                                            
+                                        <!--/div-->
                                       </div>
 
                                       
-                                      <div class="col-sm-11 col-md-6 col-lg-6">
-                                        <div class="thumbnail">
+                                      <div class="col-sm-11 col-md-6 col-lg-6 grid-item">
+                                        <!--div class="thumbnail"-->
                                           <img src="../Elements/92.PNG" alt="...">
-                                            <h3></h3>
-                                        </div>
+                                        <!--/div-->
                                       </div>
                                       
-                                      <div class="col-sm-11 col-md-6 col-lg-6">
-                                        <div class="thumbnail">
+                                      <div class="col-sm-11 col-md-6 col-lg-6 grid-item">
+                                        <!--div class="thumbnail"-->
                                           <img src="../Elements/88.PNG" alt="...">
-                                            <h3></h3>
-                                        </div>
+                                            
+                                        <!--/div-->
                                       </div>
-
-
+                        
+                                        <!-- ******PLACEHOLDER IMAGES******* -->
+                                        
+                                        <div class="grid-item">
+                                            <img src="../Elements/31.PNG" alt="...">
+                                        </div>
+                                        <div class="grid-item">
+                                            <img src="../Elements/32.PNG" alt="...">
+                                        </div>
+                                        <div class="grid-item">
+                                            <img src="../Elements/33.PNG" alt="...">
+                                        </div>
+                                        <div class="grid-item">
+                                            <img src="../Elements/41.PNG" alt="...">
+                                        </div>
+                                        <div class="grid-item">
+                                            <img src="../Elements/42.PNG" alt="...">
+                                        </div>
+                                        <div class="grid-item">
+                                            <img src="../Elements/43.PNG" alt="...">
+                                        </div>
+                                    
+                                    
+                                        <!-- ******PLACEHOLDER IMAGES******* -->
                                       
                                     </div>
 
@@ -83,22 +105,22 @@
 
       
                                     <!--/////////////////////////////////////////-->
-                                    <!--//////////////////////////////////////-->
+                                    <!--/////////////////////////////////////////-->
                                     
                                     <nav aria-label="Page navigation">
                                           <ul class="pagination">
                                                 <li>
-                                                    <a href="#" aria-label="Previous">
+                                                    <a class="nochange" href="#" aria-label="Previous">
                                                         <span aria-hidden="true">&laquo;</span>
                                                     </a>
                                                 </li>
-                                                <li><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">4</a></li>
-                                                <li><a href="#">5</a></li>
+                                                <li><a class="page1" data-page=1 href="#">1</a></li>
+                                                <li><a class="page2" data-page=2 href="#">2</a></li>
+                                                <li><a class="page3" data-page=3 href="#">3</a></li>
+                                                <li><a class="page4" data-page=4 href="#">4</a></li>
+                                                <li><a class="page5" data-page=5 href="#">5</a></li>
                                                 <li>
-                                                    <a href="#" aria-label="Next">
+                                                    <a class="nochange" href="#" aria-label="Next">
                                                         <span aria-hidden="true">&raquo;</span>
                                                     </a>
                                                 </li>
@@ -113,6 +135,29 @@
             <% include ./partials/footer %>
             
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+            <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
             <script src="../scripts/ModalLogin.js"></script>
+            <script src="../scripts/Pagination.js"></script>
+            <script>
+              
+                $(window).on('load', function(){
+                    var $grid = $('.grid');
+                    $grid.imagesLoaded(function(){
+                        console.log("images are loaded");
+                        $grid.masonry({
+                            // options...
+                            itemSelector: '.grid-item',
+                            columnWidth: '.grid-item',
+                            columnCount: 2,
+                            isAnimated: false,
+                            transition: 0,
+                            percentPosition: true
+                        });
+                        console.log("MasonryJs is loaded");
+                    });
+                });
+                  
+            </script>
       </body>
 </html>

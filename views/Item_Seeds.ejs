@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Autumn Petals</title>
+            <link rel="stylesheet" href="/stylesheets/main_page.css" style="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Satisfy" rel="stylesheet">
+            <link rel="stylesheet" href="/stylesheets/button.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/downloadbutton.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/image_slider.css" style="text/css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/stylesheets/game_weather.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/footer.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/form.css" style="text/css">
+            <link rel="shortcut icon" type="image/x-icon" href="/Elements/favicon.ico"/>
+            <link rel="stylesheet" href="/stylesheets/media_gallery.css" style="text/css"/>
+
+      </head>
+      <body>
+          <div class="mainContent">
+                <% include ./partials/header1 %>
+                <% include ./partials/banner %>
+                <% include ./partials/header2 %>
+                </div><br><br>
+                <div class="content3">
+                    <% include ./partials/side_tab_item %>
+                        <div class="item_content">
+                            <h2 class="header_item"><%=seed.name%></h2><br>
+                            <% seed.img = seed.img.replace("..","");%>
+                                <div class="item_content_container1">
+                                    <div class="row">
+                                        
+                                        <div class="col-sm-5 col-md-5 col-lg-5">
+                                            <div class="thumbnail">
+                                                <img src="<%=seed.img%>">
+                                            </div> 
+                                        </div>
+                                            
+                                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                                <div class="thumbnail">
+                                                    <img src="<%=seed.img%>">
+                                                </div>
+                                            </div>       
+                                    </div>
+                                    <div class="row">
+                                        <div class="descriptions"></div>
+                                        
+                                    </div>
+                                    
+
+
+
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <% include ./partials/footer %>
+            
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="../scripts/ModalLogin.js"></script>
+      </body>
+</html>
+
+
+
+                                <!--<% seed.forEach(function(seed){ %>-->
+                                <!--    <div class="item_content_list">-->
+                                <!--          <div class="item_img">-->
+                                <!--                <img src="<%=seed.img%>" alt="<%=seed.name%>">-->
+                                <!--          </div>-->
+                                <!--          <div class="description">-->
+                                <!--                <a href="/item-mall/item/<%=seed._id%>/<%=seed.name%>" class="item_name"><%=seed.name%></a>-->
+                                <!--         </div>-->
+                        
+                                <!--        <div class="information">-->
+                                <!--            <ul>-->
+                                <!--                        <li>Yield: <%=seed.quantity%></li>-->
+                                <!--                        <li>Market Price: <%=seed.price%></li>-->
+                                <!--                        <li>Grow Time: <%=seed.growTime%></li>-->
+                                <!--                        <li>Harvest Season: <%=seed.season%></li>-->
+                                <!--            </ul>-->
+                                <!--        </div>-->
+                        
+                                <!--          <div class="item_price">-->
+                                <!--                <b><%=seed.price%></b>-->
+                                <!--                <img src="../Elements/AP.PNG" alt="AP">-->
+                                <!--          </div>-->
+                                <!--          <div class="buy_button">-->
+                                <!--                <a href="/item-mall/item/<%=seed._id%>/<%=seed.name%>"><b>Buy Now</b></a>-->
+                                <!--          </div>-->
+                                <!--    </div>-->
+                                <!--<% }); %>-->

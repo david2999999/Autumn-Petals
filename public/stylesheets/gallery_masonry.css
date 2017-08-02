@@ -1,0 +1,41 @@
+.grid {
+    width: 90%;
+    column-count: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0px 20px 20px 20px;
+    border-radius: 18px;
+    padding-left: 24px;
+}
+
+
+.grid-item{
+    display: inline-block;
+    width: 42%;
+    margin: 20px;
+    /*border: solid 2px #d1d1d1;*/
+    border-radius: 4px;
+    box-shadow: 0 0 16px 1px black;
+    padding: 5px;
+    background-color: white;
+    transition-duration: 0;
+}
+
+.grid-item img {
+    margin: 0;
+}
+
+.hideMe {
+    display: none;
+}
+
+
+@media (max-width: 1236px){
+    .grid{
+        width: 90%;
+        padding-left: 0;
+    }
+    
+    .grid-item{
+        width: 90%;
+    }
+}
