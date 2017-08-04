@@ -1,9 +1,9 @@
 /*global $*/
 
-//Default page number is 2
-var currentPage = 2;
-$('.page2').parent().addClass("active disabled");
-
+//Default page number is 1
+var currentPage = 1;
+//$('.page1').parent().addClass("active disabled");
+/*
 //Hide all items upon first load
 var hideAll = function(){$('.grid-item').addClass('hideMe')};
 
@@ -13,7 +13,7 @@ var showPage = function(currentPage) {
         console.log("Unhiding image" + i);
         $(".grid div:nth-child(" + i + ")").removeClass("hideMe");
     }
-}
+}*/
 //refresh masronry.js after switching pages
 var refreshMasonry = function(){
 
@@ -29,12 +29,12 @@ var refreshMasonry = function(){
             console.log("MasonryJs is refreshed");
 };
 
-hideAll();
-showPage(currentPage);
+//hideAll();
+//showPage(currentPage);
 
 //When the user clicked on a page number, remove active & disable class from currentPage
 //Then append active and disable class onto that page number
-$(".pagination a").click(function(event){
+/*$(".pagination a").click(function(event){
     event.preventDefault();
     var n = currentPage + 1;
     $(".pagination li").each(function(){$(this).removeClass("active disabled");});
@@ -58,5 +58,5 @@ $(".pagination a").click(function(event){
     }
     
     
-});
+});*/
 

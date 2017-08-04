@@ -1,49 +1,46 @@
 var mongoose = require("mongoose");
 var Crop = require("./models/crop");
+var Gallery = require("./models/mediaGallery");
 
 var data = [
-    {
-        name: "Strawberry",
-        price: 100,
-        quantity: 10,
-        growTime: "2 days",
-        season: "Spring",
-        img: "../image/3.PNG"
-    },
-    {
-        name: "Raspberry",
-        price: 200,
-        quantity: 10,
-        growTime: "2 days",
-        season: "Spring",
-        img: "../image/4.PNG"
-    },
-    {
-        name: "Cherry",
-        price: 200,
-        quantity: 10,
-        growTime: "2 days",
-        season: "Spring",
-        img: "../image/4.PNG"
-    }
+    {   img : "../Gallery/80.PNG"},
+    {   img : "../Gallery/76.PNG"},
+    {   img : "../Gallery/74.PNG"},
+    {   img : "../Gallery/77.PNG"},
+    {   img : "../Gallery/92.PNG"},
+    {   img : "../Gallery/88.PNG"},
+    {   img : "../Gallery/31.PNG"},
+    {   img : "../Gallery/42.PNG"},
+    {   img : "../Gallery/43.PNG"},
+    {   img : "../Gallery/41.PNG"},
+    {   img : "../Gallery/32.PNG"},
+    {   img : "../Gallery/33.PNG"},
+    // {   img : "../Gallery/88.PNG"},
+    // {   img : "../Gallery/88.PNG"},
+    // {   img : "../Gallery/88.PNG"},
+    // {   img : "../Gallery/88.PNG"},
+
 ]
 
 function seedDB(){
-    Crop.remove({}, function(err){
+    Gallery.remove({}, function(err){
         if(err){
             console.log(err);
         } else {
-            console.log("removed Crops");
+            console.log("removed seedDB contents (iamges)");
             
+            var counter = 0;
             data.forEach(function(crop){
-                Crop.create(crop, function(err, crops){         
+                Gallery.create(crop, function(err, crops){         
                     if(err){
                         console.log(err);
                     } else{
-                        console.log("added a crop")
+                        counter+=1;
+                        console.log(counter + " images have been added");
                     }    
                 });
             });
+            
         }
     });
 }

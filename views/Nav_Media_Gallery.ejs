@@ -3,19 +3,19 @@
       <head>
             <meta charset="utf-8">
             <title>Autumn Petals</title>
-            <link rel="stylesheet" href="../stylesheets/main_page.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/main_page.css" style="text/css">
             <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Satisfy" rel="stylesheet">
-            <link rel="stylesheet" href="../stylesheets/button.css" style="text/css">
-            <link rel="stylesheet" href="../stylesheets/downloadbutton.css" style="text/css">
-            <link rel="stylesheet" href="../stylesheets/image_slider.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/button.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/downloadbutton.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/image_slider.css" style="text/css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="../stylesheets/game_weather.css" style="text/css">
-            <link rel="stylesheet" href="../stylesheets/footer.css" style="text/css">
-            <link rel="stylesheet" href="../stylesheets/form.css" style="text/css">
-            <link rel="stylesheet" href="../stylesheets/pagination.css" style="text/css">
-            <link rel="shortcut icon" type="image/x-icon" href="../Elements/favicon.ico"/>
-            <!--link rel="stylesheet" href="../stylesheets/media_gallery.css" style="text/css"-->
-            <link rel="stylesheet" href="../stylesheets/gallery_masonry.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/game_weather.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/footer.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/form.css" style="text/css">
+            <link rel="stylesheet" href="/stylesheets/pagination.css" style="text/css">
+            <link rel="shortcut icon" type="image/x-icon" href="/Elements/favicon.ico"/>
+            <!--link rel="stylesheet" href="/stylesheets/media_gallery.css" style="text/css"-->
+            <link rel="stylesheet" href="/stylesheets/gallery_masonry.css" style="text/css">
 
       </head>
       <body>
@@ -32,78 +32,21 @@
                               <div class="item_content_container1">
 
                                     <div class="row grid">
-                                      <div class="col-sm-11 col-md-5 col-lg-6 grid-item">
-                                        <!--div class="thumbnail"-->
-                                          <img src="../Gallery/80.PNG" alt="...">
-                                            
-                                        <!--/div-->
-                                      </div>
-                                      
-                                      <div class="col-sm-11 col-md-5 col-lg-5 grid-item">
-                                        <!--div class="thumbnail"-->
-                                          <img src="../Gallery/76.PNG" alt="...">
-                                            
-                                        <!--/div-->
-                                      </div>
-                                      
-                                       <div class="col-sm-11 col-md-5 col-lg-5 grid-item">
-                                        <div class="thumbnail">
-                                          <img src="../Gallery/74.PNG" alt="...">
-                                            
-                                        </div>
-                                      </div>
-                                      
-                                      <div class="col-sm-11 col-md-4 col-lg-5 grid-item">
-                                        <!--div class="thumbnail"-->
-                                          <img src="../Gallery/77.PNG" alt="...">
-                                            
-                                        <!--/div-->
-                                      </div>
-
-                                      
-                                      <div class="col-sm-11 col-md-6 col-lg-6 grid-item">
-                                        <!--div class="thumbnail"-->
-                                          <img src="../Gallery/92.PNG" alt="...">
-                                        <!--/div-->
-                                      </div>
-                                      
-                                      <div class="col-sm-11 col-md-6 col-lg-6 grid-item">
-                                        <!--div class="thumbnail"-->
-                                          <img src="../Gallery/88.PNG" alt="...">
-                                            
-                                        <!--/div-->
-                                      </div>
-                        
-                                        <!-- ******PLACEHOLDER IMAGES******* -->
-                                        
-                                        <div class="grid-item">
-                                            <img src="../Gallery/31.PNG" alt="...">
-                                        </div>
-                                        <div class="grid-item">
-                                            <img src="../Gallery/32.PNG" alt="...">
-                                        </div>
-                                        <div class="grid-item">
-                                            <img src="../Gallery/33.PNG" alt="...">
-                                        </div>
-                                        <div class="grid-item">
-                                            <img src="../Gallery/41.PNG" alt="...">
-                                        </div>
-                                        <div class="grid-item">
-                                            <img src="../Gallery/42.PNG" alt="...">
-                                        </div>
-                                        <div class="grid-item">
-                                            <img src="../Gallery/43.PNG" alt="...">
-                                        </div>
-                                    
-                                    
-                                        <!-- ******PLACEHOLDER IMAGES******* -->
-                                      
+                                        <!--% for (var i = (pictures.pg-1)*6; i<(pictures.pg)*6; i++){ %-->
+                                        <% for (var i=0;i<pictures.length;i++){ %>
+                                            <% if(i < pictures.length){ %>
+                                             <div class="grid-item">  
+                                                <!--% console.log("Im the second log in gallery " + pictures[i].img) %-->
+                                                <% pictures[i].img = pictures[i].img.replace("..","");%>
+                                                <img src="<%= pictures[i].img %>" alt="<%=pictures[i].img%>">
+                                                <!--<p><!--%=pictures[i].img%></p>-->
+                                            <% } else { %>
+                                                <% break; %>
+                                            <% } %>
+                                            </div>    
+                                        <% } %>
                                     </div>
-
-
-                                    
-
-      
+                                            
                                     <!--/////////////////////////////////////////-->
                                     <!--/////////////////////////////////////////-->
                                     
@@ -113,12 +56,26 @@
                                                     <a class="nochange" href="#" aria-label="Previous">
                                                         <span aria-hidden="true">&laquo;</span>
                                                     </a>
+                                                
                                                 </li>
-                                                <li><a class="page1" data-page=1 href="#">1</a></li>
-                                                <li><a class="page2" data-page=2 href="#">2</a></li>
-                                                <li><a class="page3" data-page=3 href="#">3</a></li>
-                                                <li><a class="page4" data-page=4 href="#">4</a></li>
-                                                <li><a class="page5" data-page=5 href="#">5</a></li>
+                                                
+                                                <% console.log("%d",totalImages);%>
+                                                <% for (var i=1; i<=Math.ceil(totalImages/6.0);i++){ %>
+                                                    <% if(pictures.pg == i) { %>
+                                                        <li class="<%="active disable"%>">
+                                                    <% } else { %>
+                                                        <li>
+                                                    <% } %>
+                                                            <a class="page<%=i%>" href="/media/gallery/<%=i%>"><%=i%></a>
+                                                        </li>
+                                                <% } %>
+                                                
+                                                
+                                                    <!--<li><a class="page1" data-page=1 href="/media/gallery/1">1</a></li>-->
+                                                    <!--<li><a class="page2" data-page=2 href="/media/gallery/2">2</a></li>-->
+                                                    <!--<li><a class="page3" data-page=3 href="/media/gallery/3">3</a></li>-->
+                                                    <!--<li><a class="page4" data-page=4 href="/media/gallery/4">4</a></li>-->
+                                                    <!--<li><a class="page5" data-page=5 href="/media/gallery/5">5</a></li>-->
                                                 <li>
                                                     <a class="nochange" href="#" aria-label="Next">
                                                         <span aria-hidden="true">&raquo;</span>
@@ -133,12 +90,13 @@
                   </div>
               </div><br><br>
             <% include ./partials/footer %>
-            
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
             <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-            <script src="../scripts/ModalLogin.js"></script>
-            <script src="../scripts/Pagination.js"></script>
+            <script src="/scripts/ModalLogin.js"></script>
+            <script src="/scripts/Fade_In.js"></script>
+            <!--script src="/scripts/Pagination.js"></script-->
             <script>
               
                 $(window).on('load', function(){
@@ -146,18 +104,17 @@
                     $grid.imagesLoaded(function(){
                         console.log("images are loaded");
                         $grid.masonry({
-                            // options...
                             itemSelector: '.grid-item',
                             columnWidth: '.grid-item',
                             columnCount: 2,
-                            isAnimated: false,
-                            transition: 0,
+                            transitionDuartion: 0,
                             percentPosition: true
                         });
                         console.log("MasonryJs is loaded");
                     });
                 });
-                  
+                 
+
             </script>
       </body>
 </html>

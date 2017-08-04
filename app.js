@@ -19,15 +19,17 @@ var express         = require("express"),       // used to run the whole applica
     Gem             = require("./models/gem"),
     Fish            = require("./models/fish"),
     Weather         = require("./models/weather"),
-    Crop            = require("./models/crop");
+    Crop            = require("./models/crop"),
+    Gallery         = require("./models/gallery");
     
-    // seedDB       = require("./seed");
-    // seedDB();
+    // var seedDB       = require("./seed");
+    // seedDB(); // adds a few images in the database
+
 
 // console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message from mongoose
 mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
-// mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
+//  mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
@@ -120,8 +122,6 @@ app.get("/item-mall/item/:id/:name", function(req, res){
     res.render("Item_Seeds");
 });
 
-
-
 ////////////////////
 // THE GAME ROUTE //
 ////////////////////
@@ -197,12 +197,50 @@ app.get("/announce/server", function(req, res){
 // MEDIA ROUTES//
 ////////////////
 app.get("/media", function(req, res) {
-   res.render("Nav_Media_Gallery"); 
-});
+  res.redirect("/media/gallery/1");
+}); 
 
 app.get("/media/gallery", function(req, res) {
-    res.render("Nav_Media_Gallery"); 
+    res.redirect("/media/gallery/1"); 
 });
+
+app.get("/media/gallery/:pg", function(req, res){
+    var page = req.params.pg;
+    var totalImages;
+    
+    Gallery.count({}, function(err, count){
+        if(err){
+            console.log(err);
+        } else {
+            totalImages = count;
+            // console.log("totalImages = %d", totalImages);
+            
+            Gallery.find().skip((page-1)*6).limit(6).exec(function(err, pictures){
+                if(err){
+                    console.log(err);
+                } else {
+                    // console.log("numbers of image returned: " + pictures.length);
+                    // console.log(pictures);
+                    pictures.pg = page;
+                    res.render("Nav_Media_Gallery", {pictures: pictures, totalImages: totalImages});
+                }
+            });
+        }
+    });
+    
+    // Gallery.find().skip((page-1)*6).limit(6).exec(function(err, pictures){
+    //     if(err){
+    //         console.log(err);
+    //     } else {
+    //         console.log("numbers of image returned: " + pictures.length);
+    //         console.log(pictures);
+    //         pictures.pg = page;
+    //         res.render("Nav_Media_Gallery", {pictures: pictures, totalImages: totalImages});
+    //     }
+    // });
+
+});
+
 
 //////////////////////////
 // AUTHENTICATION ROUTES//
