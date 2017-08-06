@@ -71,7 +71,7 @@ app.get("/", function(req, res){
 // ITEM MALL ROUTE//
 ////////////////////
 app.get("/item-mall", function(req, res){
-    Crop.find({}, function(err, seed) {
+    Seed.find({}, function(err, seed) {
         if(err){
             console.log(err);
         }else{
@@ -81,7 +81,14 @@ app.get("/item-mall", function(req, res){
     // res.render("Nav_Seeds");
 });
 app.get("/item-mall/seeds", function(req, res){
-    res.render("Nav_Seeds");
+    Seed.find({}, function(err, seed) {
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Seeds", {seed : seed});
+        }
+    });
+    
 });
 app.get("/item-mall/trees", function(req, res){
     res.render("Nav_Legendary_Trees");

@@ -32,14 +32,13 @@
                               <div class="item_content_container1">
 
                                     <div class="row grid">
-                                        <!--% for (var i = (pictures.pg-1)*6; i<(pictures.pg)*6; i++){ %-->
                                         <% for (var i=0;i<pictures.length;i++){ %>
                                             <% if(i < pictures.length){ %>
                                              <div class="grid-item">  
-                                                <!--% console.log("Im the second log in gallery " + pictures[i].img) %-->
+                                                
                                                 <% pictures[i].img = pictures[i].img.replace("..","");%>
                                                 <img src="<%= pictures[i].img %>" alt="<%=pictures[i].img%>">
-                                                <!--<p><!--%=pictures[i].img%></p>-->
+                                                
                                             <% } else { %>
                                                 <% break; %>
                                             <% } %>
@@ -70,12 +69,6 @@
                                                         </li>
                                                 <% } %>
                                                 
-                                                
-                                                    <!--<li><a class="page1" data-page=1 href="/media/gallery/1">1</a></li>-->
-                                                    <!--<li><a class="page2" data-page=2 href="/media/gallery/2">2</a></li>-->
-                                                    <!--<li><a class="page3" data-page=3 href="/media/gallery/3">3</a></li>-->
-                                                    <!--<li><a class="page4" data-page=4 href="/media/gallery/4">4</a></li>-->
-                                                    <!--<li><a class="page5" data-page=5 href="/media/gallery/5">5</a></li>-->
                                                 <li>
                                                     <a class="nochange" href="#" aria-label="Next">
                                                         <span aria-hidden="true">&raquo;</span>
