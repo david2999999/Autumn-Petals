@@ -59,7 +59,8 @@
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
   /*color: #777;*/
-  cursor: not-allowed;
+  pointer-events: none;
+  cursor: default;
   /*background-color: #fff;*/
   /*border-color: #ddd;*/
 }

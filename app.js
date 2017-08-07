@@ -22,19 +22,19 @@ var express         = require("express"),       // used to run the whole applica
     Crop            = require("./models/crop"),
     Gallery         = require("./models/gallery");
     
-    // var seedDB       = require("./seed");
-    // seedDB(); // adds a few images in the database
+    //  var seedDB       = require("./seed");
+    //  seedDB(); // adds a few images in the database
 
 
 // console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;  // prevent a warning message from mongoose
 mongoose.connect(process.env.DATABASEURL);// DATABASE HERE,THIS IS HEROKU/MONGOLAB DATABASE
-//  mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
+// mongoose.connect("mongodb://localhost/autumn-petals"); // C9 mongoDB, WHEN EDITING USE THIS ONE
 
 //body parser allows to see the element value from the form
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // does not need to include ejs extension
-app.use(express.static(__dirname + "/public")); // Establish the static file server to serve the css stylesheet and jquery
+app.use(express.static(__dirname + "/public")); // Estalish static directory to serve images and other codes.
 app.use(methodOverride("_method"));
 
 // PASSPORT CONFIGURATIONS
@@ -71,21 +71,30 @@ app.get("/", function(req, res){
 // ITEM MALL ROUTE//
 ////////////////////
 app.get("/item-mall", function(req, res){
-    Seed.find({}, function(err, seed) {
-        if(err){
+    res.redirect("/item-mall/seeds/1");
+});
+
+app.get("/item-mall/seeds", function(req, res){
+    res.redirect("/item-mall/seeds/1");
+});
+
+app.get("/item-mall/seeds/:pg", function(req, res){
+    var page = req.params.pg;
+    var totalImages;
+    Seed.count().exec(function(err, count){
+        if (err){
             console.log(err);
-        }else{
-            res.render("Nav_Seeds",{seed : seed});
+        } else {
+            totalImages = count;
         }
     });
-    // res.render("Nav_Seeds");
-});
-app.get("/item-mall/seeds", function(req, res){
-    Seed.find({}, function(err, seed) {
+    
+    Seed.find().skip((page-1)*16).limit(16).exec(function(err, seed) {
         if(err){
             console.log(err);
         }else{
-            res.render("Nav_Seeds", {seed : seed});
+            console.log("There is %d item in seed", totalImages);
+            res.render("Nav_Seeds", {seed : seed, totalImages: totalImages, page: page});
         }
     });
     
@@ -204,7 +213,7 @@ app.get("/announce/server", function(req, res){
 // MEDIA ROUTES//
 ////////////////
 app.get("/media", function(req, res) {
-  res.redirect("/media/gallery/1");
+    res.redirect("/media/gallery/1");
 }); 
 
 app.get("/media/gallery", function(req, res) {
@@ -228,24 +237,15 @@ app.get("/media/gallery/:pg", function(req, res){
                 } else {
                     // console.log("numbers of image returned: " + pictures.length);
                     // console.log(pictures);
-                    pictures.pg = page;
-                    res.render("Nav_Media_Gallery", {pictures: pictures, totalImages: totalImages});
+                    //pictures.pg = page;
+                    res.render("Nav_Media_Gallery", {pictures: pictures, 
+                                                     totalImages: totalImages,
+                                                     page: page}
+                    );
                 }
             });
         }
     });
-    
-    // Gallery.find().skip((page-1)*6).limit(6).exec(function(err, pictures){
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         console.log("numbers of image returned: " + pictures.length);
-    //         console.log(pictures);
-    //         pictures.pg = page;
-    //         res.render("Nav_Media_Gallery", {pictures: pictures, totalImages: totalImages});
-    //     }
-    // });
-
 });
 
 
