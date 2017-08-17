@@ -267,6 +267,11 @@ div.side_tab3{
     padding-left: 0;
     color: white;
     text-align: left;
+    white-space: normal;
+}
+
+.information ul li {
+    margin-bottom: 1em;
 }
 
 

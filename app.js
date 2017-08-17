@@ -9,6 +9,7 @@ var express         = require("express"),       // used to run the whole applica
     nodemailer      = require("nodemailer"),    // used for emailing, such as forget password
     async           = require("async"),         // used with nodemailer for password reset
     crypto          = require("crypto"),        // encoding data such as the password
+    DBQ             = require("./middleware/databaseQuery.js"),
     //All of the Schema Models
     Animal          = require("./models/animal"),
     Insect          = require("./models/insect"),
@@ -67,6 +68,45 @@ app.get("/", function(req, res){
     res.render("Main_Page");
 });
 
+///////////////////
+// WORLD ROUTE  //
+//////////////////
+
+app.get("/world", function(req, res) {
+   res.render("Nav_World_Market"); 
+});
+app.get("/world/farm", function(req, res) {
+   res.render("Nav_World_Farm"); 
+});
+app.get("/world/character", function(req, res) {
+   res.render("Nav_World_Character"); 
+});
+app.get("/world/town", function(req, res) {
+    res.render("Nav_World_Town");
+});
+app.get("/world/forest", function(req, res) {
+    res.render("Nav_World_Forest");
+});
+app.get("/world/market", function(req, res) {
+   res.render("Nav_World_Market"); 
+});
+
+app.get("/world/house", function(req, res) {
+   res.render("Nav_World_House"); 
+});
+
+app.get("/world/location", function(req, res) {
+   res.render("Nav_World_Location"); 
+});
+
+app.get("/world/mine", function(req, res) {
+    res.render("Nav_World_Mine");
+});
+
+app.get("/world/beach", function(req, res) {
+    res.render("Nav_World_Beach");
+});
+
 ////////////////////
 // ITEM MALL ROUTE//
 ////////////////////
@@ -80,8 +120,41 @@ app.get("/item-mall/seeds", function(req, res){
 
 app.get("/item-mall/seeds/:pg", function(req, res){
     var page = req.params.pg;
+    var seed;
     var totalImages;
-    Seed.count().exec(function(err, count){
+    
+    DBQ.dbQuery(Seed, page, 16)
+        .then((results) => {
+            seed = results.query;
+            totalImages = results.count;
+            console.log("The totalImages count is: " + totalImages);
+            res.render("Nav_Seeds", {seed, totalImages, page});
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
+    
+    
+// Seed.find().skip((page-1)*16).limit(16).exec(function(err, seed) {
+//     if(err){
+//         console.log(err);
+//     }else{
+//         res.render("Nav_Seeds", {seed : seed, totalImages: totalImages, page: page});
+//     }
+// });
+    
+
+});
+app.get("/item-mall/trees", function(req, res){
+    res.render("Nav_Legendary_Trees");
+});
+app.get("/item-mall/animals", function(req, res){
+    res.redirect("/item-mall/animals/1");
+});
+app.get("/item-mall/animals/:pg", function(req, res){
+    var page = req.params.pg;
+    var totalImages;
+    Animal.count().exec(function(err, count){
         if (err){
             console.log(err);
         } else {
@@ -89,22 +162,17 @@ app.get("/item-mall/seeds/:pg", function(req, res){
         }
     });
     
-    Seed.find().skip((page-1)*16).limit(16).exec(function(err, seed) {
+    Animal.find().skip((page-1)*16).limit(16).exec(function(err, animal) {
         if(err){
             console.log(err);
         }else{
-            console.log("There is %d item in seed", totalImages);
-            res.render("Nav_Seeds", {seed : seed, totalImages: totalImages, page: page});
+            res.render("Nav_Animals", { animal, totalImages, page});
         }
     });
-    
 });
-app.get("/item-mall/trees", function(req, res){
-    res.render("Nav_Legendary_Trees");
-});
-app.get("/item-mall/animals", function(req, res){
-    res.render("Nav_Animals");
-});
+
+
+
 app.get("/item-mall/pets", function(req, res){
     Pet.find({}, function(err, pets){
         if(err){
@@ -121,9 +189,35 @@ app.get("/item-mall/pets", function(req, res){
 // app.get("/item-mall/expansion", function(req, res){
 //     res.render("Nav_Expansion");
 // });
-app.get("/item-mall/gem", function(req, res){
-    res.render("Nav_Gems");
+
+
+
+app.get("/item-mall/gems", function(req, res){
+    res.redirect("/item-mall/gems/1");
 });
+app.get("/item-mall/gems/:pg", function(req, res){
+    var page = req.params.pg;
+    var totalImages;
+    Gem.count().exec(function(err, count){
+        if (err){
+            console.log(err);
+        } else {
+            totalImages = count;
+        }
+    });
+    
+    Gem.find().skip((page-1)*16).limit(16).exec(function(err, gem) {
+        if(err){
+            console.log(err);
+        }else{
+            res.render("Nav_Gems", { gem, totalImages, page});
+        }
+    });
+});
+
+
+
+
 // app.get("/item-mall/expboost", function(req, res){
 //     res.render("Nav_ExpBoost");
 // });
@@ -142,23 +236,34 @@ app.get("/item-mall/item/:id/:name", function(req, res){
 // THE GAME ROUTE //
 ////////////////////
 app.get("/game", function(req, res){
-    Crop.find({}, function(err, crops){
+    res.redirect("/game/crops/1");
+});
+
+app.get("/game/crops", function(req, res){
+    res.redirect("/game/crops/1");
+});
+
+app.get("/game/crops/:pg", function(req, res){
+    var page = req.params.pg;
+    var totalImages;
+    
+    Crop.count().exec(function(err, count){
+        if (err){
+            console.log(err);
+        } else {
+            totalImages = count;
+        }
+    });
+    
+    Crop.find().skip((page-1)*16).limit(16).exec(function(err, crops) {
         if(err){
             console.log(err);
         }else{
-            res.render("Nav_Crops", {crops: crops});
+            res.render("Nav_Crops", {crops : crops, totalImages: totalImages, page: page});
         }
     });
 });
-app.get("/game/crops", function(req, res){
-    Crop.find({}, function(err, crops){
-       if(err){
-           console.log(err);
-       } else{
-           res.render("Nav_Crops", {crops, crops});
-       }
-    });
-});
+
 app.get("/game/weather", function(req, res){
     res.render("Nav_Game_Weather");
 });
@@ -188,7 +293,7 @@ app.get("/game/contest", function(req, res){
 // THE NEWS ROUTE //
 ////////////////////
 app.get("/announce", function(req, res){
-    res.render("Nav_News");
+    res.redirect("/announce/news");
 });
 app.get("/announce/news", function(req, res){
     res.render("Nav_News");
