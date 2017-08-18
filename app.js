@@ -154,21 +154,34 @@ app.get("/item-mall/animals", function(req, res){
 app.get("/item-mall/animals/:pg", function(req, res){
     var page = req.params.pg;
     var totalImages;
-    Animal.count().exec(function(err, count){
-        if (err){
-            console.log(err);
-        } else {
-            totalImages = count;
-        }
-    });
+    var animal;
     
-    Animal.find().skip((page-1)*16).limit(16).exec(function(err, animal) {
-        if(err){
-            console.log(err);
-        }else{
-            res.render("Nav_Animals", { animal, totalImages, page});
-        }
-    });
+    DBQ.dbQuery(Animal, page, 16)
+        .then((results) => {
+            animal = results.query;
+            totalImages = results.count;
+            console.log("The totalImages count is: " + totalImages);
+            res.render("Nav_Animals", {animal, totalImages, page});
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
+    
+    // Animal.count().exec(function(err, count){
+    //     if (err){
+    //         console.log(err);
+    //     } else {
+    //         totalImages = count;
+    //     }
+    // });
+    
+    // Animal.find().skip((page-1)*16).limit(16).exec(function(err, animal) {
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         res.render("Nav_Animals", { animal, totalImages, page});
+    //     }
+    // });
 });
 
 
@@ -178,7 +191,7 @@ app.get("/item-mall/pets", function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render("Nav_Pets", {pets: pets});
+            res.render("Nav_Pets", {pets});
         }
     });
     
@@ -198,21 +211,34 @@ app.get("/item-mall/gems", function(req, res){
 app.get("/item-mall/gems/:pg", function(req, res){
     var page = req.params.pg;
     var totalImages;
-    Gem.count().exec(function(err, count){
-        if (err){
-            console.log(err);
-        } else {
-            totalImages = count;
-        }
-    });
+    var gem;
     
-    Gem.find().skip((page-1)*16).limit(16).exec(function(err, gem) {
-        if(err){
-            console.log(err);
-        }else{
-            res.render("Nav_Gems", { gem, totalImages, page});
-        }
-    });
+    DBQ.dbQuery(Gem, page, 16)
+        .then((results) => {
+            gem = results.query;
+            totalImages = results.count;
+            console.log("The totalImages count is: " + totalImages);
+            res.render("Nav_Gems", {gem, totalImages, page});
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
+    
+    // Gem.count().exec(function(err, count){
+    //     if (err){
+    //         console.log(err);
+    //     } else {
+    //         totalImages = count;
+    //     }
+    // });
+    
+    // Gem.find().skip((page-1)*16).limit(16).exec(function(err, gem) {
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         res.render("Nav_Gems", { gem, totalImages, page});
+    //     }
+    // });
 });
 
 
@@ -246,22 +272,34 @@ app.get("/game/crops", function(req, res){
 app.get("/game/crops/:pg", function(req, res){
     var page = req.params.pg;
     var totalImages;
+    var crop;
     
-    Crop.count().exec(function(err, count){
-        if (err){
-            console.log(err);
-        } else {
-            totalImages = count;
-        }
-    });
+    DBQ.dbQuery(Crop, page, 16)
+        .then((results) => {
+            crop = results.query;
+            totalImages = results.count;
+            console.log("The totalImages count is: " + totalImages);
+            res.render("Nav_Crops", {crop, totalImages, page});
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
     
-    Crop.find().skip((page-1)*16).limit(16).exec(function(err, crops) {
-        if(err){
-            console.log(err);
-        }else{
-            res.render("Nav_Crops", {crops : crops, totalImages: totalImages, page: page});
-        }
-    });
+    // Crop.count().exec(function(err, count){
+    //     if (err){
+    //         console.log(err);
+    //     } else {
+    //         totalImages = count;
+    //     }
+    // });
+    
+    // Crop.find().skip((page-1)*16).limit(16).exec(function(err, crops) {
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         res.render("Nav_Crops", {crops : crops, totalImages: totalImages, page: page});
+    //     }
+    // });
 });
 
 app.get("/game/weather", function(req, res){
@@ -328,29 +366,41 @@ app.get("/media/gallery", function(req, res) {
 app.get("/media/gallery/:pg", function(req, res){
     var page = req.params.pg;
     var totalImages;
+    var pictures;
     
-    Gallery.count({}, function(err, count){
-        if(err){
-            console.log(err);
-        } else {
-            totalImages = count;
-            // console.log("totalImages = %d", totalImages);
+    DBQ.dbQuery(Gallery, page, 16)
+        .then((results) => {
+            pictures = results.query;
+            totalImages = results.count;
+            console.log("The totalImages count is: " + totalImages);
+            res.render("Nav_Media_Gallery", {pictures, totalImages, page});
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
+    
+    // Gallery.count({}, function(err, count){
+    //     if(err){
+    //         console.log(err);
+    //     } else {
+    //         totalImages = count;
+    //         // console.log("totalImages = %d", totalImages);
             
-            Gallery.find().skip((page-1)*6).limit(6).exec(function(err, pictures){
-                if(err){
-                    console.log(err);
-                } else {
-                    // console.log("numbers of image returned: " + pictures.length);
-                    // console.log(pictures);
-                    //pictures.pg = page;
-                    res.render("Nav_Media_Gallery", {pictures: pictures, 
-                                                     totalImages: totalImages,
-                                                     page: page}
-                    );
-                }
-            });
-        }
-    });
+    //         Gallery.find().skip((page-1)*6).limit(6).exec(function(err, pictures){
+    //             if(err){
+    //                 console.log(err);
+    //             } else {
+    //                 // console.log("numbers of image returned: " + pictures.length);
+    //                 // console.log(pictures);
+    //                 //pictures.pg = page;
+    //                 res.render("Nav_Media_Gallery", {pictures: pictures, 
+    //                                                  totalImages: totalImages,
+    //                                                  page: page}
+    //                 );
+    //             }
+    //         });
+    //     }
+    // });
 });
 
 
