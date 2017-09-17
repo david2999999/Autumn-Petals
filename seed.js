@@ -816,62 +816,6 @@ function seedDB(){
     insertData(Animal, animalData, "Animal");
     insertData(Gem, gemData, "Gem");
     
-    
-    
-    // Gallery.remove({},function(err){
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         var counter = 0;
-    //         galleryData.forEach(function(crop){
-    //             Gallery.create(crop, function(err, crops){
-    //                 if(err){
-    //                     console.log(err);
-    //                 } else{
-    //                     counter+=1;
-    //                     console.log(counter + " images have been added to Gallery");
-    //                 }    
-    //             });
-    //         });
-    //     }
-    // });
-    // Seed.remove({}, function(err){
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         console.log("removed contents in Seed.");
-            
-    //         var counter = 0;
-    //         seedData.forEach(function(crop){
-    //             Seed.create(crop, function(err, crops){
-    //                 if(err){
-    //                     console.log(err);
-    //                 } else{
-    //                     counter+=1;
-    //                     console.log(counter + " images have been added to Seed");
-    //                 }    
-    //             });
-    //         });
-            
-    //     }
-    // });
-    // Crop.remove({}, function(err){
-    //     if (err){
-    //         console.log(err);
-    //     } else {
-    //         var counter = 0;
-    //         cropData.forEach(function(crop){
-    //             Crop.create(crop, function(err, crops){
-    //                 if(err){
-    //                     console.log(err);
-    //                 } else {
-    //                     counter +=1;
-    //                     console.log(counter + " images have been added to Crop");
-    //                 }
-    //             });
-    //         });
-    //     }
-    // });
 }
 
 

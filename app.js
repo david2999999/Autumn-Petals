@@ -71,7 +71,9 @@ app.get("/", function(req, res){
 ///////////////////
 // WORLD ROUTE  //
 //////////////////
-
+app.get("/start", function(req, res) {
+    res.render("Starting_Page");
+});
 app.get("/world", function(req, res) {
    res.render("Nav_World_Market"); 
 });
@@ -272,14 +274,15 @@ app.get("/game/crops", function(req, res){
 app.get("/game/crops/:pg", function(req, res){
     var page = req.params.pg;
     var totalImages;
-    var crop;
+    var crops;
     
     DBQ.dbQuery(Crop, page, 16)
         .then((results) => {
-            crop = results.query;
+            crops = results.query;
             totalImages = results.count;
+            //console.log(crops);
             console.log("The totalImages count is: " + totalImages);
-            res.render("Nav_Crops", {crop, totalImages, page});
+            res.render("Nav_Crops", {crops, totalImages, page});
         })
         .catch((reason) => {
             console.log(reason);
@@ -368,7 +371,7 @@ app.get("/media/gallery/:pg", function(req, res){
     var totalImages;
     var pictures;
     
-    DBQ.dbQuery(Gallery, page, 16)
+    DBQ.dbQuery(Gallery, page, 6)
         .then((results) => {
             pictures = results.query;
             totalImages = results.count;
@@ -470,7 +473,7 @@ app.post('/forgot', function(req, res, next) {
     },
     function(token, done) {
       User.findOne({ email: req.body.email }, function(err, user) {
-        if (!user) {
+        if (err || !user) {
           req.flash('error', 'No account with that email address exists.');
           return res.redirect('/forgot');
         }
